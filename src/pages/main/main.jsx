@@ -5,10 +5,10 @@ import About from "../../components/about/about";
 import Contacts from "../../components/contacts/contacts";
 
 import Portfolio from "../../components/portfolios/portfolios";
-import "./main.scss";
 import Adventages from "../../components/adventages/adventages";
 import Services from "../../components/services/services";
 import Catalog from "../../components/catalog/catalog";
+import "./main.scss";
 
 const Main = () => {
   return (
