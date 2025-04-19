@@ -1,0 +1,113 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
+const Portfolio = () => {
+  const [portfolios, setPortfolios] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://back.artjalyuzi.uz/portfolios")
+      .then((res) => {
+        setPortfolios(res.data.data); // Each portfolio has 4 images
+        console.log(res.data.data, "portfolios");
+      })
+      .catch((err) => console.error("Error fetching portfolios:", err));
+  }, []);
+
+  return (
+    <div className=" py-10 px-10 mx-auto">
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        spaceBetween={20}
+        slidesPerView={1}
+        navigation={{
+          nextEl: ".custom-next",
+          prevEl: ".custom-prev",
+        }}
+        loop={true} // Infinite loop uchun
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        className="mySwiper"
+      >
+        {portfolios.map((portfolio, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex flex-col gap-6">
+              {/* Top Row: Description and First Image */}
+              <div className="flex flex-col md:flex-row gap-4 space-y-[5vw]">
+                {/* Description Section with Layered Background */}
+                <div className="relative w-full md:w-1/3">
+                  <div className="absolute inset-0 bg-[#d9d9d9] rounded-md shadow-md"></div>
+                  <div className="relative bg-black text-white p-[2vw] top-[2vw] left-[2vw] rounded-md shadow-md">
+                    <h2 className="text-2xl font-bold mb-2">Portfolio</h2>
+                    <p className="text-sm leading-relaxed">
+                      <strong>ART JALYUZI</strong> — jalyuzi mahsulotlarini
+                      taqdim etuvchi lokal brend. Mijozlar uchun nafis,
+                      zamonaviy va funksional yechimlarni taklif qiladi.
+                      <br />
+                      Bizning shior:{" "}
+                      <strong>SIFAT VA MIJOZLAR UCHUN QULAYLIK!</strong>
+                    </p>
+                  </div>
+                </div>
+
+                {/* First Image (Larger) */}
+                <div className="w-full md:w-2/3">
+                  <img
+                    src={portfolio.image[0].url}
+                    alt={`Portfolio ${index} - Image 1`}
+                    className="w-full h-40 md:h-60 object-cover rounded-md"
+                  />
+                </div>
+                <div className="w-full md:w-2/3">
+                  <img
+                    src={portfolio.image[1].url}
+                    alt={`Portfolio ${index} - Image 1`}
+                    className="w-full h-40 md:h-60 object-cover rounded-md"
+                  />
+                </div>
+              </div>
+
+              {/* Bottom Row: Remaining Images */}
+              <div className="flex flex-col md:flex-row gap-4">
+                {/* Second Image (Smaller) */}
+                <div className="w-full md:w-1/3">
+                  <img
+                    src={portfolio.image[2].url}
+                    alt={`Portfolio ${index} - Image 2`}
+                    className="w-full h-40 md:h-60 object-cover rounded-md"
+                  />
+                </div>
+
+                {/* Third Image (Wider) */}
+                <div className="w-full md:w-1/3">
+                  <img
+                    src={portfolio.image[3].url}
+                    alt={`Portfolio ${index} - Image 3`}
+                    className="w-full h-40 md:h-60 object-cover rounded-md"
+                  />
+                </div>
+
+                {/* Fourth Image (Narrower) */}
+                <div className="w-full md:w-1/3 relative">
+                  <img src="/portfolio.png" alt="" />
+                </div>
+                <button className="custom-next absolute left-[30vw] lg:left-[80vw] top-[90%] bg-pink-700 text-white px-6 py-2 rounded-md flex items-center gap-2 hover:bg-pink-800">
+                  Oldinga
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+};
+
+export default Portfolio;
