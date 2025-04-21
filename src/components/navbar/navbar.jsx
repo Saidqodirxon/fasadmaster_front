@@ -60,7 +60,7 @@ const Navbar = () => {
     <nav className="navbar mx-auto">
       <a
         href="tel:+998337200005"
-        className="desktop-phone flex justify-center md:justify-end items-center pt-2 text-[#777] gap-2 cursor-pointer"
+        className="desktop-phone flex justify-center md:justify-end items-center pt-2 text-[#777] gap-2 cursor-pointer font-bold"
       >
         <img src={phone} alt="Phone" />
         <p>+99833 720-00-05</p>
