@@ -81,7 +81,7 @@ function About() {
         </span>
         <div className="flex justify-center gap-4 md:gap-6 mb-6">
           <a
-            href="https://www.instagram.com/art_jalyuziuzb"
+            href="https://instagram.com/jalyuzi_art"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-pink-700"
@@ -92,7 +92,7 @@ function About() {
             />
           </a>
           <a
-            href="https://t.me/Official_ART_Jalyuzi"
+            href="https://t.me/artjalyuziuzb  "
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-pink-700"

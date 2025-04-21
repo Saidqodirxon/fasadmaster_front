@@ -50,7 +50,7 @@ export default function Footer() {
           </a>
           <div className="flex space-x-4 mt-2">
             <a
-              href="https://www.instagram.com/art_jalyuziuzb"
+              href="https://instagram.com/jalyuzi_art"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-pink-700"
@@ -58,7 +58,7 @@ export default function Footer() {
               <FaInstagram size={20} />
             </a>
             <a
-              href="https://t.me/Official_ART_Jalyuzi"
+              href="https://t.me/artjalyuziuzb  "
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-pink-700"
