@@ -49,16 +49,16 @@ export default function Adventages() {
         <p className="text-center text-sm md:text-base w-full md:w-3/4 lg:w-2/3 mx-auto leading-relaxed mb-8">
           {t("adventages3")}
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto place-content-center justify-content-center min-h-screen">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-[#1D1D1D] rounded-lg p-4 flex flex-col items-center text-center justify-center border border-[#777]"
+              className="bg-[#1D1D1D] rounded-lg p-4 flex flex-col items-center text-center border border-[#777] w-[calc(50%-0.5rem)] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[300px]"
             >
               <img
                 src={card.icon}
-                alt={t(card.title)} // Use translated title for alt text
-                className="flex justify-center mx-auto rounded-full m-[2vw]"
+                alt={t(card.title)}
+                className="mx-auto rounded-full my-4 w-16 h-16"
               />
               <h4 className="text-lg font-semibold mb-2">{t(card.title)}</h4>
               <p className="text-sm">{t(card.description)}</p>
@@ -68,7 +68,7 @@ export default function Adventages() {
         <div className="text-center mt-8">
           <a
             href="#contacts"
-            className="mt-[1rem] text-center bg-[#9A124E] text-white hover:bg-white hover:text-[#9A124E] px-[5vw] py-[1vw] rounded-lg"
+            className="inline-block bg-[#9A124E] text-white hover:bg-white hover:text-[#9A124E] px-8 py-3 rounded-lg transition-colors"
           >
             {t("Boglanish")}
           </a>
