@@ -4,10 +4,11 @@ import Hero from "../../components/hero/hero";
 import About from "../../components/about/about";
 import Contacts from "../../components/contacts/contacts";
 
-import Portfolio from "../../components/portfolios/portfolios";
 import Adventages from "../../components/adventages/adventages";
 import Services from "../../components/services/services";
 import Catalog from "../../components/catalog/catalog";
+import Portfolios from "../../components/portfolios/portfolios";
+
 import "./main.scss";
 
 const Main = () => {
@@ -21,7 +22,8 @@ const Main = () => {
       </div>
       <About />
       <Contacts />
-      <Portfolio />
+      <Portfolios />
+
       <Adventages />
       <Catalog />
       <Services />
