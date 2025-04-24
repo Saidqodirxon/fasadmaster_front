@@ -8,11 +8,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay"; // Autoplay uchun stil fayli
 import "./hero.scss";
+import { Link, useNavigate } from "react-router-dom";
 
 function Hero() {
   const { t } = useTranslation();
   const [banners, setBanners] = useState([]);
   const currentLang = localStorage.getItem("i18nextLng") || "uz";
+  const navigateTo = useNavigate();
 
   useEffect(() => {
     axios
@@ -37,7 +39,10 @@ function Hero() {
       >
         {banners.map((banner) => (
           <SwiperSlide key={banner._id}>
-            <div className="flex flex-col lg:flex-row items-center gap-6">
+            <Link
+              to={banner?.link ? banner.link : "#"}
+              className="flex flex-col lg:flex-row items-center gap-6"
+            >
               <div className="flex-1 relative shadow-lg rounded-lg bg-[#888]">
                 <img
                   src={banner.image?.url}
@@ -55,7 +60,7 @@ function Hero() {
                     : banner.description_uz}
                 </p>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
