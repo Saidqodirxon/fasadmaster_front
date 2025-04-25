@@ -58,20 +58,17 @@ const Navbar = () => {
 
   return (
     <nav className="navbar mx-auto">
-      <div className="w-full flex justify-center md:justify-end items-start gap-2 px-2 py-1 ">
-        <a
-          href="tel:+998337200005"
-          className="desktop-phone flex items-center gap-2 cursor-pointer font-bold text-center bg-[#9A124E] text-white hover:bg-white hover:text-[#9A124E] px-4 py-2 rounded-lg shadow-md transition-all duration-300"
-        >
-          <img src={phone} alt="Phone" className="w-5 h-5" />
-          <p>+998 33 720 00 05</p>
-        </a>
-      </div>
-
       <div className="flex items-center justify-between py-4">
         <Link to={"/"}>
           <img className="logo" src={logo} alt="Logo" />
         </Link>
+        <a
+          href="tel:+998337200005"
+          className="flex items-center justify-center gap-2 font-bold text-center bg-[#9A124E] text-white hover:bg-white hover:text-[#9A124E] md:px-4 py-[2vw] md:py-2 rounded-lg shadow-md transition-all duration-300 w-full sm:w-auto"
+        >
+          <img src={phone} alt="Phone" className="w-5 h-5" />
+          <span>+998 33 720 00 05</span>
+        </a>
 
         <div className="md:hidden">
           <TemporaryDrawer />
