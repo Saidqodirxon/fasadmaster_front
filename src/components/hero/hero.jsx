@@ -28,7 +28,7 @@ function Hero() {
   }, []);
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 md:mt-[9vw] mt-[45vw]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
