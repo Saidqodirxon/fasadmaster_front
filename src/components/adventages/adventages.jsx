@@ -1,9 +1,9 @@
 import React from "react";
-import icon1 from "/adventages/icon1.svg";
-import icon2 from "/adventages/icon2.svg";
-import icon3 from "/adventages/icon3.svg";
-import icon4 from "/adventages/icon4.svg";
-import icon5 from "/adventages/icon5.svg";
+import icon1 from "/adventages/1.svg";
+import icon2 from "/adventages/2.svg";
+import icon3 from "/adventages/3.svg";
+import icon4 from "/adventages/4.svg";
+import icon5 from "/adventages/5.svg";
 import { useTranslation } from "react-i18next";
 
 export default function Adventages() {
