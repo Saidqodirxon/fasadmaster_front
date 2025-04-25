@@ -45,19 +45,19 @@ i18n.use(initReactI18next).init({
         adv: {
           light_control_title: "Yorug‘lik nazorati",
           light_control_description:
-            "Yorug‘likni o‘zingiz xohlagan darajada sozlash imkoniyati",
+            "Jalyuzilar yordamida siz xonadagi yorug‘lik darajasini istalgancha sozlashingiz mumkin.",
           adaptive_design_title: "Mos dizayn",
           adaptive_design_description:
-            "Jalyuzilar turlari o‘zingiz uchun mos variantni toping",
+            "Sodda, zamonaviy va didli. Jalyuzilar istalgan xona uslubiga mos keladi.",
           easy_maintenance_title: "Oson parvarish",
           easy_maintenance_description:
-            "Chang yutmaydi, yuvish talab qilinmaydi, faqat artib oling",
+            "Matolarday yuvishga hojat yo‘q — changyutkich yoki mato bilan artish kifoya.",
           sun_protection_title: "Quyoshdan himoya",
           sun_protection_description:
-            "Havo muvozanati va harorat issiq kunda optimal bo‘ladi",
+            "Maxsus materiallar yordamida quyosh nurini to‘sadi va xona ichini salqin saqlaydi.",
           smart_control_title: "Aqlli boshqaruv",
           smart_control_description:
-            "Masofadan boshqarish tizimi va avtomatik sozlash tizimi",
+            "Masofadan turib telefon yoki pult orqali oson va zamonaviy boshqaruv.",
         },
         services: {
           installation_hashtag: "#Jalyuzilarni o‘rnatish",
@@ -116,21 +116,21 @@ i18n.use(initReactI18next).init({
         adventages3:
           "Многолетний опыт, индивидуальный подход, новейшие дизайны только для вас!",
         adv: {
-          light_control_title: "Контроль освещения",
+          light_control_title: "Управление освещением",
           light_control_description:
-            "Возможность регулировать освещение по вашему желанию",
+            "С помощью жалюзи вы можете регулировать уровень освещения в комнате по своему желанию.",
           adaptive_design_title: "Адаптивный дизайн",
           adaptive_design_description:
-            "Найдите идеальный вариант жалюзи для себя",
-          easy_maintenance_title: "Легкий уход",
+            "Просто, современно и со вкусом. Жалюзи подходят к любому стилю интерьера.",
+          easy_maintenance_title: "Лёгкий уход",
           easy_maintenance_description:
-            "Не впитывает пыль, не требует стирки, достаточно протереть",
+            "Не требует стирки как ткани — достаточно пройтись пылесосом или протереть тряпкой.",
           sun_protection_title: "Защита от солнца",
           sun_protection_description:
-            "Оптимальный баланс воздуха и температуры в жаркие дни",
+            "Специальные материалы блокируют солнечные лучи и сохраняют прохладу в помещении.",
           smart_control_title: "Умное управление",
           smart_control_description:
-            "Система дистанционного управления и автоматической настройки",
+            "Современное и удобное управление с помощью телефона или пульта дистанционного управления.",
         },
         services: {
           installation_hashtag: "#Установка жалюзи",
