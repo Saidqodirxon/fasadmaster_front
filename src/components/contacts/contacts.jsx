@@ -1,125 +1,77 @@
-"use client";
+import React, { useState } from "react";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { toast } from "react-toastify";
-import img from "/contacts/img.png";
-
-function Contacts() {
-  const { t } = useTranslation();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "+998",
-  });
+const Contacts = () => {
+  const [formData, setFormData] = useState({ name: "", phone: "" });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
     try {
-      const response = await fetch("https://back.artjalyuzi.uz/contacts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Submission failed");
-      }
-
-      toast.success(t("succesMessage"), {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
-
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        phone: "+998",
-      });
+      await axios.post("https://back.fasadmaster.uz/contacts", formData);
+      toast.success("Заявка успешно отправлена!");
+      setFormData({ name: "", phone: "" });
     } catch (error) {
-      console.error(t("errorMessage"), error);
-      toast.error(t("errorMessage"), {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
-    } finally {
-      setIsSubmitting(false);
+      toast.error("Ошибка при отправке заявки");
     }
   };
 
   return (
-    <div id="contacts" className="mt-10 md:mt-20 ">
-      <div className="flex flex-col md:flex-row items-center bg-[#8B0037] rounded-lg overflow-hidden">
-        {/* Form Section */}
+    <div
+      className="bg-cover bg-center bg-no-repeat py-20 px-4 text-white bg-[#3A3A3CA6] opacity-[85%]"
+      style={{ backgroundImage: "url('/contacts.png')" }}
+    >
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-10">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-semibold leading-relaxed">
+            Вы можете вызвать прораба на Ваш участок и получить подробную
+            консультацию
+          </h2>
+        </div>
         <form
           onSubmit={handleSubmit}
-          className="w-full md:w-1/2 p-8 md:p-12 text-white space-y-4"
+          className=" p-6 rounded-xl space-y-4 text-white"
         >
-          <h3 className="text-lg md:text-xl font-bold w-full md:w-3/4 leading-tight">
-            {t("contact1")}
-          </h3>
-          <p className="text-sm font-normal">{t("contact2")}</p>
-          <p className="text-sm font-normal">{t("contact3")}</p>
+          <p className="font-medium">
+            Оставьте Ваши контакты и наш менеджер свяжется с Вами
+          </p>
           <input
             type="text"
             name="name"
+            placeholder="Имя"
             value={formData.name}
             onChange={handleChange}
-            placeholder={t("contact4")}
-            className="w-full md:w-3/4 border border-[#FFFFFF] rounded p-3 bg-[#8B0037] outline-none focus:ring-2 focus:ring-white text-white placeholder-white"
             required
+            className="w-full px-4 py-2 border rounded bg-inherit "
           />
           <input
-            type="text"
+            type="tel"
             name="phone"
-            value={formData.phone}
+            placeholder="Телефон"
+            value={formData.phone || "+998"}
             onChange={handleChange}
-            placeholder={t("contact5")}
-            className="w-full md:w-3/4 border border-[#FFFFFF] rounded p-3 bg-[#8B0037] outline-none focus:ring-2 focus:ring-white text-white placeholder-white"
             required
+            className="w-full px-4 py-2 border rounded bg-inherit"
           />
           <button
             type="submit"
-            disabled={isSubmitting}
-            className="w-full md:w-3/4 border border-white text-center bg-[#fff] text-[#9A124E] hover:bg-[#9A124E] hover:text-white px-6 py-3 rounded-lg transition-colors"
+            className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
           >
-            {isSubmitting ? t("contact6") : t("contact7")}
+            Отправить
           </button>
+          <p className="text-xs text-white mt-2">
+            Ваши данные не будут переданы 3-м лицам. Конфиденциально!
+          </p>
         </form>
-
-        {/* Image Section */}
-        <div className="w-full md:w-1/2 p-8 md:p-12">
-          <div className="relative shadow-lg rounded-lg bg-white">
-            <img
-              src={img}
-              alt="Contact Image"
-              className="w-full h-auto object-cover rounded-lg shadow-md transform -translate-x-5 -translate-y-5"
-            />
-          </div>
-        </div>
       </div>
+      <ToastContainer position="bottom-center" autoClose={3000} />
     </div>
   );
-}
+};
 
 export default Contacts;

@@ -1,7 +1,6 @@
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 import Hero from "../../components/hero/hero";
-import About from "../../components/about/about";
 import Contacts from "../../components/contacts/contacts";
 
 import Adventages from "../../components/adventages/adventages";
@@ -10,6 +9,10 @@ import Catalog from "../../components/catalog/catalog";
 import Portfolios from "../../components/portfolios/portfolios";
 
 import "./main.scss";
+import ServicesMain from "../../components/services-main/main";
+import ServicesGridMain from "../../components/category-services-main";
+import WhyChooseUs from "../../components/whychoose/why";
+import AboutMain from "../../components/about-main/about";
 
 const Main = () => {
   return (
@@ -20,13 +23,13 @@ const Main = () => {
           <Hero />
         </div>
       </div>
-      <About />
+      <ServicesMain />
+      <Adventages />
+      <ServicesGridMain />
+      <WhyChooseUs />
+      <AboutMain />
       <Contacts />
       <Portfolios />
-
-      <Adventages />
-      <Catalog />
-      <Services />
       <Footer />
     </>
   );

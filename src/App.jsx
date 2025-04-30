@@ -3,6 +3,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Main from "./pages/main/main";
 import NotFound from "./pages/404page/404";
 import ScrollToTopButton from "./components/scrollTopBtn";
+import ServicesAllPage from "./pages/services-all";
+import ServicesPage from "./pages/services";
 
 function App() {
   const location = useLocation();
@@ -21,12 +23,14 @@ function App() {
     <main>
       {isLoading ? (
         <div className="flex justify-center items-center min-h-screen">
-          <div className="w-16 h-16 border-t-4 border-[#9A124E] border-solid rounded-full animate-spin"></div>
+          <div className="w-16 h-16 border-t-4 border-[#71914B] border-solid rounded-full animate-spin"></div>
         </div>
       ) : (
         <>
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/services" element={<ServicesAllPage />} />
+            <Route path="/services/:id" element={<ServicesPage />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
           <ScrollToTopButton />

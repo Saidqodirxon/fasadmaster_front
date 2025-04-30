@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { FaGlobe, FaPhone } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaGlobe,
+  FaInstagram,
+  FaPhone,
+  FaTelegram,
+  FaYoutube,
+} from "react-icons/fa";
 import logo from "/logo.png";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n/i18n";
@@ -9,6 +16,8 @@ import "./navbar.scss";
 import phone from "../../assets/icons/phone.svg";
 import UzIcon from "../../assets/icons/uz.svg";
 import RuIcon from "../../assets/icons/ru.svg";
+import EnIcon from "../../assets/icons/en.svg";
+
 import { BiChevronDown } from "react-icons/bi";
 
 const Navbar = () => {
@@ -46,7 +55,7 @@ const Navbar = () => {
 
   const pages = [
     { key: "about_us", url: "about" },
-    { key: "portfolio", url: "portfolio" },
+    { key: "portfolio", url: "services" },
     { key: "services", url: "services" },
     { key: "contacts", url: "contacts" },
   ];
@@ -54,37 +63,71 @@ const Navbar = () => {
   const languages = [
     { value: "uz", label: UzIcon },
     { value: "ru", label: RuIcon },
+    { value: "en", label: EnIcon },
   ];
 
   return (
-    <nav className="navbar mx-auto">
+    <nav className="navbar mx-auto px-[5vw]">
       <div className="flex items-center justify-between py-4">
         <Link to={"/"}>
           <img className="logo" src={logo} alt="Logo" />
         </Link>
-        <a
-          href="tel:+998337200005"
-          className="flex items-center justify-center gap-2 font-bold text-center bg-[#9A124E] text-white hover:bg-white hover:text-[#9A124E] md:px-4 py-[2vw] md:py-2 rounded-lg shadow-md transition-all duration-300 w-full sm:w-auto"
-        >
-          <img src={phone} alt="Phone" className="w-5 h-5" />
-          <span>+998 33 720 00 05</span>
-        </a>
 
         <div className="md:hidden">
           <TemporaryDrawer />
         </div>
 
-        <div className="hidden md:flex gap-[2vw] justify-between items-center">
+        <div className="flex justify-between gap-[2vw] border border-[#71914B] px-[3vw] py-[0.5vw] rounded-full">
           {pages.map((page) => (
             <a
-              href={`#${page.url}`}
+              href={`/${page.url}`}
               key={page.url}
-              className="links font-medium text-[#777] cursor-pointer"
+              className="links font-medium text-[#212121] cursor-pointer"
             >
               {t(`links.${page.key}`)}
             </a>
           ))}
+        </div>
 
+        <div className="hidden md:flex gap-[2vw] justify-between items-center">
+          <div className="flex flex-col">
+            <Link
+              to={"tel:+998998107090"}
+              className="cursor-pointer hover:text-[#71914B]"
+            >
+              +99899 810 70 90
+            </Link>
+            <div className="flex justify-center items-center gap-2">
+              <Link
+                to="https://t.me/uzbekistan_uz"
+                target="_blank"
+                className=" "
+              >
+                <FaTelegram className="cursor-pointer text-[#71914B] text-[1.5vw] hover:text-[#476f2d]" />
+              </Link>
+              <Link
+                className=""
+                to="https://www.instagram.com/uzbekistan_uz/"
+                target="_blank"
+              >
+                <FaInstagram className="cursor-pointer text-[#71914B] text-[1.5vw] hover:text-[#476f2d]" />
+              </Link>
+              <Link
+                className=""
+                to="https://www.facebook.com/uzbekistan_uz/"
+                target="_blank"
+              >
+                <FaFacebook className="cursor-pointer text-[#71914B] text-[1.5vw] hover:text-[#476f2d]" />
+              </Link>
+              <Link
+                className=""
+                to="https://www.youtube.com/@uzbekistan_uz"
+                target="_blank"
+              >
+                <FaYoutube className="cursor-pointer text-[#71914B] text-[1.5vw] hover:text-[#476f2d]" />
+              </Link>
+            </div>
+          </div>
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -97,6 +140,7 @@ const Navbar = () => {
                       ?.label
                   }
                   alt=""
+                  className="w-[2vw]"
                 />
                 <BiChevronDown />
               </span>
@@ -113,7 +157,7 @@ const Navbar = () => {
                     }}
                     className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                   >
-                    <img src={item.label} alt="" />
+                    <img src={item.label} alt="" className="w-[2vw]" />
                   </div>
                 ))}
               </div>

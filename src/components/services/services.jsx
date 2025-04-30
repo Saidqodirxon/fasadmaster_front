@@ -56,7 +56,7 @@ export default function Services() {
       <div className="text-center mt-8">
         <a
           href="#contacts"
-          className="mt-[1rem] text-center bg-[#9A124E] text-white hover:bg-white hover:text-[#9A124E] px-[5vw] py-[1vw] rounded-lg"
+          className="mt-[1rem] text-center bg-[#71914B] text-white hover:bg-white hover:text-[#71914B] px-[5vw] py-[1vw] rounded-lg"
         >
           {t("Boglanish")}
         </a>

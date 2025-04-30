@@ -25,7 +25,7 @@ function ScrollToTopButton() {
     showButton && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 bg-[#9A124E] text-white p-3 rounded-full shadow-lg z-50 hover:bg-[#9a124d6c] transition-colors"
+        className="fixed bottom-6 right-6 bg-[#71914B] text-white p-3 rounded-full shadow-lg z-50 hover:bg-[#9a124d6c] transition-colors"
         aria-label="Scroll to top"
       >
         <FaArrowUp className="text-xl" />

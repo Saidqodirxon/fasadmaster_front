@@ -1,95 +1,68 @@
 import React from "react";
-import { FaInstagram, FaTelegram } from "react-icons/fa";
-import phone from "../../assets/icons/phone.svg";
-import { useTranslation } from "react-i18next";
+import {
+  FaTelegramPlane,
+  FaInstagram,
+  FaYoutube,
+  FaFacebookF,
+} from "react-icons/fa";
 
-export default function Footer() {
-  const { t } = useTranslation(); // Get t function for translations
-
-  const pages = [
-    { key: "about_us", url: "about" },
-    { key: "portfolio", url: "portfolio" },
-    { key: "services", url: "services" },
-    { key: "contacts", url: "contacts" },
-  ];
-
+const Footer = () => {
   return (
-    <footer className="bg-white text-black py-6 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center gap-8">
-        {/* Logo Section */}
-        <div className="flex-shrink-0">
-          <img
-            src="/logo.png" // Replace with actual logo path
-            alt={t("logo")} // Use translated logo text for alt
-            className="h-16 w-auto"
-          />
+    <footer className="bg-neutral-900 text-white py-10 px-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <img src="/logo-white.png" alt="Fasad Master" className="w-32 mb-4" />
         </div>
-
-        {/* Navigation Links */}
-        <div className="flex flex-col space-y-2">
-          {pages.map((page) => (
-            <a
-              key={page.key}
-              href={`#${page.url}`} // Added # to match typical anchor navigation
-              className="text-gray-500 hover:text-pink-700 text-sm font-medium"
-            >
-              {t(`links.${page.key}`)}
-            </a>
-          ))}
+        <div>
+          <h4 className="font-semibold mb-2">Услуги</h4>
+          <ul className="space-y-1 text-sm text-gray-300">
+            <li>Травертин</li>
+            <li>Алюкобонд</li>
+            <li>Натуральный камень</li>
+          </ul>
         </div>
-
-        {/* Contact and Social Media */}
-        <div className="flex flex-col items-center space-y-2">
-          <a
-            href="tel:+998337200005"
-            className="desktop-phone flex items-center justify-end pt-2 text-[#777] gap-2 cursor-pointer"
-          >
-            <img src={phone} alt={t("phone_icon")} />{" "}
-            {/* Translated alt text */}
-            +99833 720-00-05
-          </a>
-          <div className="flex space-x-4 mt-2">
-            <a
-              href="https://instagram.com/jalyuzi_art"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-pink-700"
-            >
-              <FaInstagram size={20} />
-            </a>
-            <a
-              href="https://t.me/artjalyuziuzb  "
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-pink-700"
-            >
-              <FaTelegram size={20} />
-            </a>
+        <div>
+          <h4 className="font-semibold mb-2">О нас</h4>
+          <ul className="space-y-1 text-sm text-gray-300">
+            <li>Компания</li>
+            <li>История компании</li>
+            <li>Наша преимущества</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Портфолио</h4>
+          <ul className="space-y-1 text-sm text-gray-300">
+            <li>Наши работы</li>
+          </ul>
+          <h4 className="font-semibold mt-4 mb-1">Контакты</h4>
+          <p className="text-sm text-gray-300">+99899 810 70 90</p>
+          <div className="flex items-center space-x-3 mt-3 text-green-500 text-xl">
+            <FaTelegramPlane />
+            <FaInstagram />
+            <FaYoutube />
+            <FaFacebookF />
           </div>
         </div>
       </div>
-
-      {/* Copyright */}
-      <div className="text-center mt-6 text-sm text-gray-500">
-        {t("copyright")}
+      <div className="mt-8 border-t border-gray-700 pt-4 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
+        <p>
+          Копирайт: © {new Date().getFullYear()} Fasad Master. Все права
+          защищены.
+        </p>
+        <p>
+          Разработала команда{" "}
+          <a
+            href="https://supersite.uz"
+            className="text-white underline hover:text-green-400"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Supersite.uz
+          </a>
+        </p>
       </div>
-      <div className="text-center mt-2 text-sm text-gray-500">
-        {t("created_by")}
-        <a
-          href="https://supersite.uz"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-pink-700 hover:underline"
-        >
-          Supersite.uz
-        </a>
-      </div>
-      <h3
-        className="text-center text-4xl md:text-6xl lg:text-8xl text-[#F4F4F4] uppercase font-bold mb-4"
-        style={{ letterSpacing: "1vw" }}
-      >
-        {t("logo")}
-      </h3>
     </footer>
   );
-}
+};
+
+export default Footer;

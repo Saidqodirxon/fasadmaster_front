@@ -6,19 +6,18 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/autoplay"; // Autoplay uchun stil fayli
+import "swiper/css/autoplay";
 import "./hero.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Hero() {
   const { t } = useTranslation();
   const [banners, setBanners] = useState([]);
   const currentLang = localStorage.getItem("i18nextLng") || "uz";
-  const navigateTo = useNavigate();
 
   useEffect(() => {
     axios
-      .get("https://back.artjalyuzi.uz/banners")
+      .get("https://back.fasadmaster.uz/banners")
       .then((response) => {
         setBanners(response.data.data);
       })
@@ -28,48 +27,46 @@ function Hero() {
   }, []);
 
   return (
-    <div className="container py-5 md:mt-[9vw] mt-[45vw]">
+    <div className="hero-container">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={1}
         pagination={{ clickable: true }}
-        loop={true}
+        loop
         autoplay={{ delay: 3000, disableOnInteraction: true }}
       >
-        {banners.map((banner) => (
-          <SwiperSlide key={banner._id}>
-            <Link
-              to={banner?.link ? banner.link : "#"}
-              className="flex flex-col lg:flex-row items-center gap-6"
+        {banners.map((banner) => {
+          const BannerContent = (
+            <div
+              className="h-[100vh] bg-cover bg-center bg-no-repeat flex items-center md:justify-start  justify-center px-[6vw]"
+              style={{ backgroundImage: `url(${banner?.image?.url})` }}
             >
-              <div className="flex-1 relative shadow-lg rounded-lg bg-[#888]">
-                <img
-                  src={banner.image?.url}
-                  alt={banner.name_uz}
-                  className="w-full h-auto object-cover relative -left-5 -top-5 rounded-lg shadow-md"
-                />
-              </div>
-              <div className="flex-1">
-                <h2 className="text-4xl font-bold mb-4">
+              <div className="md:text-start text-center text-white max-w-xl md:mx-[8vw]  mx-[1vw]">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
                   {currentLang === "ru" ? banner.name_ru : banner.name_uz}
                 </h2>
-                <p className="text-lg text-gray-600">
-                  {currentLang === "ru"
-                    ? banner.description_ru
-                    : banner.description_uz}
-                </p>
+                <a
+                  href="#contacts"
+                  className="inline-block bg-[#71914B] text-white hover:bg-white hover:text-[#71914B] px-8 py-3 rounded-lg transition-colors duration-300"
+                >
+                  {t("Boglanish")}
+                </a>
               </div>
-            </Link>
-          </SwiperSlide>
-        ))}
+            </div>
+          );
+
+          return (
+            <SwiperSlide key={banner._id}>
+              {banner.link ? (
+                <Link to={banner.link}>{BannerContent}</Link>
+              ) : (
+                BannerContent
+              )}
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
-      <a
-        href="#contacts"
-        className="mt-[1rem] text-center bg-[#9A124E] text-white hover:bg-white hover:text-[#9A124E]  px-[5vw] py-[1vw] rounded-lg"
-      >
-        {t("Boglanish")}
-      </a>
     </div>
   );
 }

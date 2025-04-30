@@ -1,78 +1,54 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { useTranslation } from "react-i18next"; // Import useTranslation hook
+import { Link, useNavigate } from "react-router-dom";
 
 const Catalog = () => {
-  const { i18n } = useTranslation(); // Get i18n instance
-  const { t } = useTranslation();
-  const [images, setImages] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("https://back.artjalyuzi.uz/services")
-      .then((res) => {
-        const allImages = res.data.data.flatMap((service) =>
-          service.image.map((img) => ({
-            ...img,
-            title: i18n.language === "ru" ? service.name_ru : service.name_uz, // Conditionally set title
-          }))
-        );
-        setImages(allImages);
+      .get("https://back.fasadmaster.uz/categories")
+      .then((response) => {
+        setCategories(response.data.data);
       })
-      .catch((err) => console.error(err));
-  }, [i18n.language]); // Re-run effect when language changes
+      .catch((error) => {
+        console.error("Xatolik yuz berdi:", error);
+      });
+  }, []);
 
-  // Group images into chunks of 3
-  const chunkedSlides = [];
-  for (let i = 0; i < images.length; i += 3) {
-    chunkedSlides.push(images.slice(i, i + 3));
-  }
+  const handleClick = (id) => {
+    navigate(`/category/${id}`);
+  };
 
   return (
-    <div className="py-10 px-4 md:px-16 bg-white" id="services">
-      <h2 className="text-3xl font-semibold mb-6">{t("catalog1")}</h2>
-
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
-        pagination={{ clickable: true }}
-        loop={true}
-        autoplay={{
-          delay: 10000,
-          disableOnInteraction: false,
-        }}
-        spaceBetween={30}
-        slidesPerView={1}
-      >
-        {chunkedSlides.map((group, index) => (
-          <SwiperSlide key={index}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {group.map((img, i) => (
-                <div
-                  key={i}
-                  className="relative rounded-xl overflow-hidden shadow-md group"
-                >
-                  <img
-                    src={img.url}
-                    alt={img.title}
-                    className="w-full h-[300px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-3">
-                    <span className="text-white text-sm font-medium bg-white/10 px-2 py-1 rounded-lg backdrop-blur-sm">
-                      {img.title}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </SwiperSlide>
+    <div className="max-w-7xl mx-auto px-4 py-16 mt-12">
+      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
+        НАШИ <span className="text-green-700">УСЛУГИ</span>
+      </h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+        {categories.map((cat) => (
+          <div
+            key={cat._id}
+            className="bg-white rounded-xl shadow p-4 flex flex-col items-center"
+          >
+            <img
+              src={cat.image?.url}
+              alt={cat.name_ru}
+              className="w-full h-32 object-cover rounded mb-3"
+            />
+            <p className="font-medium text-gray-700 text-sm md:text-base mb-4">
+              {cat.name_ru}
+            </p>
+            <Link
+              to={`/services/${cat._id}`}
+              className="bg-green-600 text-white px-4 py-1 text-sm rounded-full hover:bg-green-700 transition"
+            >
+              Подробнее
+            </Link>
+          </div>
         ))}
-      </Swiper>
+      </div>
     </div>
   );
 };
