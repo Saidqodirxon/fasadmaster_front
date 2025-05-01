@@ -55,7 +55,7 @@ const Navbar = () => {
 
   const pages = [
     { key: "about_us", url: "about" },
-    { key: "portfolio", url: "services" },
+    { key: "portfolio", url: "projects" },
     { key: "services", url: "services" },
     { key: "contacts", url: "contacts" },
   ];
@@ -73,11 +73,7 @@ const Navbar = () => {
           <img className="logo" src={logo} alt="Logo" />
         </Link>
 
-        <div className="md:hidden">
-          <TemporaryDrawer />
-        </div>
-
-        <div className="flex justify-between gap-[2vw] border border-[#71914B] px-[3vw] py-[0.5vw] rounded-full">
+        <div className="flex justify-between gap-[2vw] md:border border-[#71914B] px-[3vw] py-[0.5vw] rounded-full">
           {pages.map((page) => (
             <a
               href={`/${page.url}`}
@@ -87,6 +83,10 @@ const Navbar = () => {
               {t(`links.${page.key}`)}
             </a>
           ))}
+        </div>
+
+        <div className="md:hidden">
+          <TemporaryDrawer />
         </div>
 
         <div className="hidden md:flex gap-[2vw] justify-between items-center">

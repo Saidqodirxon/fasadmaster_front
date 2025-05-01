@@ -5,6 +5,9 @@ import NotFound from "./pages/404page/404";
 import ScrollToTopButton from "./components/scrollTopBtn";
 import ServicesAllPage from "./pages/services-all";
 import ServicesPage from "./pages/services";
+import ProjectsPage from "./pages/projects";
+import ContactsPage from "./pages/contacts";
+import HistoryPage from "./pages/history";
 
 function App() {
   const location = useLocation();
@@ -31,6 +34,9 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path="/services" element={<ServicesAllPage />} />
             <Route path="/services/:id" element={<ServicesPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/contacts" element={<ContactsPage />} />
+            <Route path="/about" element={<HistoryPage />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
           <ScrollToTopButton />

@@ -24,7 +24,7 @@ const Catalog = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 mt-12">
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
-        НАШИ <span className="text-green-700">УСЛУГИ</span>
+        НАШИ <span className="text-[#71914B]">УСЛУГИ</span>
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
         {categories.map((cat) => (
@@ -42,7 +42,7 @@ const Catalog = () => {
             </p>
             <Link
               to={`/services/${cat._id}`}
-              className="bg-green-600 text-white px-4 py-1 text-sm rounded-full hover:bg-green-700 transition"
+              className="bg-[#71914B] text-white px-4 py-1 text-sm rounded-full hover:bg-[#71914B] transition"
             >
               Подробнее
             </Link>

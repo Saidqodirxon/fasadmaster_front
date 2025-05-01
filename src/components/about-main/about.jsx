@@ -4,7 +4,7 @@ const AboutMain = () => {
   return (
     <div className="max-w-5xl mx-auto px-4 py-16 text-center">
       <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-        О КОМПАНИИ <span className="text-green-700">ФАСАД МАСТЕР</span>
+        О КОМПАНИИ <span className="text-[#71914B]">ФАСАД МАСТЕР</span>
       </h2>
       <p className="text-sm md:text-base text-gray-700 mb-6">
         ООО ФАСАД МАСТЕР более 10 лет работает на рынке строительных услуг.

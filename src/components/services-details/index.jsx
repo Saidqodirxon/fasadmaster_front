@@ -31,14 +31,14 @@ const ServiceByCategoryIdDetails = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <h1 className="text-white text-2xl md:text-4xl font-semibold">
-            Наши Услуги — {categoryName}
+            Наши Услуги
           </h1>
         </div>
       </div>
 
       <h2 className=" text-2xl md:text-3xl font-semibold text-center mb-10">
         ВИДЫ{" "}
-        <span className="text-green-700">{categoryName?.toUpperCase()}</span>
+        <span className="text-[#71914B]">{categoryName?.toUpperCase()}</span>
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-12">
@@ -52,7 +52,7 @@ const ServiceByCategoryIdDetails = () => {
               alt={item.name_ru}
               className="w-full h-32 object-cover rounded mb-3"
             />
-            <button className="bg-green-600 text-white text-sm px-4 py-1 rounded-full mb-2">
+            <button className="bg-[#71914B] text-white text-sm px-4 py-1 rounded-full mb-2">
               От {Number(item.price).toLocaleString()} сум/м²
             </button>
             <ul className="text-sm text-gray-600 space-y-1">
@@ -70,7 +70,7 @@ const ServiceByCategoryIdDetails = () => {
           className="flex flex-col md:flex-row items-center gap-6 mb-12"
         >
           <div className="w-[50%] ">
-            <h3 className="text-xl font-semibold text-green-700 mb-4">
+            <h3 className="text-xl font-semibold text-[#71914B] mb-4">
               {item.name_ru}
             </h3>
             <p className="w-[50%] flex flex-wrap text-sm text-gray-700 whitespace-pre-line">

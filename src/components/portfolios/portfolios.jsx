@@ -18,7 +18,7 @@ const Portfolios = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
-        НАШИ <span className="text-green-700">РАБОТЫ</span>
+        НАШИ <span className="text-[#71914B]">РАБОТЫ</span>
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {images.map((item) => (

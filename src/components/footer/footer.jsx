@@ -36,7 +36,7 @@ const Footer = () => {
           </ul>
           <h4 className="font-semibold mt-4 mb-1">Контакты</h4>
           <p className="text-sm text-gray-300">+99899 810 70 90</p>
-          <div className="flex items-center space-x-3 mt-3 text-green-500 text-xl">
+          <div className="flex items-center space-x-3 mt-3 text-[#71914B] text-xl">
             <FaTelegramPlane />
             <FaInstagram />
             <FaYoutube />

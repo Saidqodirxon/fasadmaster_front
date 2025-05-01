@@ -29,13 +29,13 @@ const ServicesMain = () => {
               className="w-full h-48 object-cover rounded-lg"
             />
             <div className="flex justify-center mt-4 md:mt-2">
-              <button className="bg-green-600 text-white px-8 py-2 rounded-full hover:bg-green-700 transition">
+              <button className="bg-[#71914B] text-white px-8 py-2 rounded-full hover:bg-[#71914B] transition">
                 Подробнее
               </button>
             </div>
           </div>
           <div className="md:w-1/2 mt-4 md:mt-0">
-            <h2 className="text-xl font-semibold text-green-700">
+            <h2 className="text-xl font-semibold text-[#71914B]">
               {service.name_ru}
             </h2>
             <p className="text-gray-700 mt-2">
