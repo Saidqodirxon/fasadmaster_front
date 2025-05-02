@@ -1,160 +1,445 @@
-/* eslint-disable no-irregular-whitespace */
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 i18n.use(initReactI18next).init({
-  // fallbackLng: 'uz',
   lng: localStorage.getItem("i18nextLng") || "uz",
   resources: {
     uz: {
       translation: {
+        Boglanish: "Bog'lanish",
         links: {
           about_us: "Biz haqimizda",
-          portfolio: "Portfolio",
+          portfolio: "Portfel",
           services: "Xizmatlar",
-          contacts: "Kontaktlar",
+          contacts: "Aloqa",
         },
-        logo: "ART JALYUZI",
-        Boglanish: "Bog'lanish",
-        about1: "Siz tanlaysiz – biz go‘zallik yaratamiz!",
-        about2: `Bizning kompaniyamiz “ART JALYUZI” sizning uyingiz va ofisingizda
-          qulaylik saqlash bilan shug’ullanadi. Biz O’zbekistonda eng yuqori
-          sifatli jalyuzi ishlab chiqaruvchilardanmiz va bu yerda siz turli xil
-          ranglarga ega bo’lgan 700 dan ortiq turdagi jalyuzilarni topishingiz
-          mumkin. Bizning mutaxassislar o’zi sizga o’lchash va o’rnatishda
-          yordam beradi.`,
-        about3: "Serviz xizmatlarimiz mutlaqo BEPUL.",
-        about4: "Bizni ijtimoiy tarmoqlarda kuzatib boring!",
-        contact1:
-          "   Derazalaringiz nafislik va did bilan bezalishini xohlaysizmi?",
-        contact2: "Ariza qoldiring",
-        contact3: "   Biz sizga eng go‘zal jalyuzi echimlarini taklif qilamiz!",
-        contact4: "Ismingiz",
-        contact5: "Telefon raqamingiz",
-        contact6: "Yuborilmoqda...",
-        contact7: "So'rov yuborish",
-        portfolio1: `— jalyuzi mahsulotlarini
-                    taqdim etuvchi lokal brend. Mijozlar uchun nafis, zamonaviy
-                    va funksional yechimlarni taklif qiladi.`,
-        portfolio2: `Bizning shior:`,
-        portfolio3: "SIFAT VA MIJOZLAR UCHUN QULAYLIK!",
-        adventages1: "Afzalliklar",
-        adventages2: "ART JALYUZINING AFZALLIKLARI",
-        adventages3: ` Ko‘p yillik tajriba, individual yondashuv, eng so‘nggi dizaynlar faqat
-          sizlar uchun!`,
-        adv: {
-          light_control_title: "Yorug‘lik nazorati",
-          light_control_description:
-            "Jalyuzilar yordamida siz xonadagi yorug‘lik darajasini istalgancha sozlashingiz mumkin.",
-          adaptive_design_title: "Mos dizayn",
-          adaptive_design_description:
-            "Sodda, zamonaviy va didli. Jalyuzilar istalgan xona uslubiga mos keladi.",
-          easy_maintenance_title: "Oson parvarish",
-          easy_maintenance_description:
-            "Matolarday yuvishga hojat yo‘q — changyutkich yoki mato bilan artish kifoya.",
-          sun_protection_title: "Quyoshdan himoya",
-          sun_protection_description:
-            "Maxsus materiallar yordamida quyosh nurini to‘sadi va xona ichini salqin saqlaydi.",
-          smart_control_title: "Aqlli boshqaruv",
-          smart_control_description:
-            "Masofadan turib telefon yoki pult orqali oson va zamonaviy boshqaruv.",
+        navbar: {
+          logoAlt: "Logotip",
+          phoneNumber: "+99899 810 70 90",
+          languageAlt: "Joriy til",
+          lang: {
+            uz: "O'zbek",
+            ru: "Rus",
+            en: "Ingliz",
+          },
         },
-        services: {
-          installation_hashtag: "#Jalyuzilarni o‘rnatish",
-          installation_title: "Jalyuzilarni professional tarzda o‘rnatamiz",
-          installation_description:
-            "Tajribali ustalarimiz jalyuzilarni to‘g‘ri va xavfsiz tarzda o‘rnatib beradi",
-          free_measurement_hashtag: "#Bepul o‘lchash",
-          free_measurement_title:
-            "Uyga o‘lchagacha kelib, aniq o‘lchamlarni olamiz",
-          free_measurement_description:
-            "Mijozlarimiz uchun qulaylik yaratish maqsadida bepul o‘lchash xizmati bilan bu muammo osonlik bilan hal qilinadi",
-          delivery_hashtag: "#Yetkazib berish",
-          delivery_title: "Tez va ishonchli yetkazib berish",
-          delivery_description:
-            "Shuhrat bo‘yicha qulay va tez yetkazib berish xizmati – mahsulotingiz xavfsiz yetkaziladi",
+        advantages: {
+          title_1: "BIZNING",
+          title_2: "AFZALLIKLARIMIZ",
+          guarantee: {
+            title: "Rasmiy kafolat — 10 yil",
+            description:
+              "Biz ishimiz sifatiga ishonamiz, shuning uchun 10 yillik rasmiy kafolat beramiz.",
+          },
+          materials: {
+            title: "Premium materiallar",
+            description:
+              "Tabiiy kvarsli travertin va sifatli elimdan foydalanamiz.",
+          },
+          price: {
+            title: "Shaffof narx",
+            description: "Yashirin to‘lovlarsiz adolatli narx taklif qilamiz.",
+          },
+          button: "Batafsil",
+          imageAlt: "Afzalliklar",
         },
-        catalog1: "Bizning xizmatlarimiz",
-        created_by: "Ishlab chiquvchi: ",
-        copyright: "© Copyright 2025 Barcha huquqlar himoyalangan",
-        ism: "Ism: ",
-        tel: "Telefon raqami: ",
-        succesMessage: "Xabarnoma muvaffaqiyatli yuborildi.",
-        errorMessage: "Xabaringiz yuborishda xatolik yuz berdi.",
-        botMessage: "Yangi xabarnoma",
+        why: {
+          title_1: "NEGA",
+          title_2: "BIZNI TANLASHADI",
+          reason1: {
+            title: "Tajriba",
+            text: "Sertifikatlangan materiallar, aniq shartnoma, o‘rtacha narx.",
+          },
+          reason2: {
+            title: "Individual yondashuv",
+            text: "Har bir mijozga alohida e'tibor.",
+          },
+          reason3: {
+            title: "Sifat va ishonchlilik",
+            text: "Kafolatlangan natija.",
+          },
+          reason4: {
+            title: "Shaffoflik",
+            text: "Shaffof narx va ish jarayoni.",
+          },
+          imageAlt: "Sabab",
+        },
+        about: {
+          title_1: "KOMPANIYA HAQIDA",
+          title_2: "FASAD MASTER",
+          paragraph_1:
+            "Fasad Master 10 yildan ortiq tajribaga ega. Kompaniya Toshkentda joylashgan bo‘lib, 90+ mutaxassis va o‘z texnik bazasiga ega.",
+          paragraph_2:
+            "Biz sifat, ishonchlilik va yuqori talabga javob berishga intilamiz.",
+        },
+        contacts: {
+          title: "Obyektga prorab chaqirib, maslahat oling",
+          subtitle: "Kontaktlaringizni qoldiring va biz sizga aloqaga chiqamiz",
+          namePlaceholder: "Ismingiz",
+          phonePlaceholder: "Telefon raqamingiz",
+          button: "Yuborish",
+          privacy: "Ma'lumotlaringiz maxfiy saqlanadi",
+          success: "So‘rov yuborildi",
+          error: "Xatolik yuz berdi",
+        },
+        portfolio: {
+          title_1: "BIZNING",
+          title_2: "ISHLARIMIZ",
+          imageAlt: "Bizning loyihalar",
+        },
+        footer: {
+          services: {
+            title: "Xizmatlar",
+            travertine: "Travertin",
+            alucobond: "Alukobond",
+            natural_stone: "Tabiiy tosh",
+          },
+          about: {
+            title: "Biz haqimizda",
+            company: "Kompaniya",
+            history: "Tarix",
+            advantages: "Afzalliklar",
+          },
+          portfolio: {
+            title: "Portfel",
+            works: "Bizning ishlar",
+          },
+          contacts: {
+            title: "Aloqa",
+            phone: "+99899 810 70 90",
+          },
+          copyright:
+            "Mualliflik huquqi © {{year}} Fasad Master. Barcha huquqlar himoyalangan.",
+          developed_by: "Ishlab chiqardi",
+        },
+        notfound: {
+          imageAlt: "404 xatolik",
+          title: "Sahifa topilmadi",
+          button: "Bosh sahifa",
+        },
+        company_history: {
+          title: "KOMPANIYA TARIXI",
+          loading: "Yuklanmoqda...",
+          guarantee: {
+            title: "Rasmiy kafolat — 10 yil",
+          },
+          materials: {
+            title: "Premium materiallar",
+          },
+          price: {
+            title: "Shaffof narx",
+          },
+        },
+        catalog: {
+          title_1: "BIZNING",
+          title_2: "XIZMATLARIMIZ",
+          more: "Batafsil",
+        },
+        contact_form: {
+          heading: "Bizning kontaktlar",
+          short_about: "Qisqacha biz haqimizda",
+          company_description:
+            "Fasad Master — ishonchli va sifatli fasad xizmatlari ko‘rsatuvchi kompaniya.",
+          form_heading: "Kontaktlaringizni qoldiring",
+          thanks: "Rahmat! Tez orada siz bilan bog‘lanamiz.",
+          name: "Ism",
+          phone: "Telefon",
+          send: "Yuborish",
+          privacy: "Ma'lumotlaringiz maxfiy saqlanadi.",
+        },
       },
     },
     ru: {
       translation: {
+        Boglanish: "Связаться",
+        navbar: {
+          logoAlt: "Логотип",
+          phoneNumber: "+99899 810 70 90",
+          languageAlt: "Текущий язык",
+          lang: {
+            uz: "Узбекский",
+            ru: "Русский",
+            en: "Английский",
+          },
+        },
         links: {
           about_us: "О нас",
           portfolio: "Портфолио",
           services: "Услуги",
           contacts: "Контакты",
         },
-        logo: "ART JALYUZI",
-        Boglanish: "Связаться",
-        about1: "Вы выбираете – мы создаем красоту!",
-        about2:
-          "Наша компания «ART JALYUZI» занимается обеспечением комфорта в вашем доме и офисе. Мы являемся одними из ведущих производителей высококачественных жалюзи в Узбекистане, и у нас вы можете найти более 700 видов жалюзи различных цветов. Наши специалисты помогут вам с замерами и установкой.",
-        about3: "Наши сервисные услуги абсолютно БЕСПЛАТНЫ.",
-        about4: "Следите за нами в социальных сетях!",
-        contact1:
-          "Хотите, чтобы ваши окна были оформлены с элегантностью и вкусом?",
-        contact2: "Оставьте заявку",
-        contact3: "Мы предложим вам самые красивые решения для жалюзи!",
-        contact4: "Ваше имя",
-        contact5: "Ваш номер телефона",
-        contact6: "Отправляется...",
-        contact7: "Отправить запрос",
-        portfolio1:
-          "— локальный бренд, предлагающий продукцию жалюзи. Мы предоставляем клиентам элегантные, современные и функциональные решения.",
-        portfolio2: "Наш девиз:",
-        portfolio3: "КАЧЕСТВО И УДОБСТВО ДЛЯ КЛИЕНТОВ!",
-        adventages1: "Преимущества",
-        adventages2: "ПРЕИМУЩЕСТВА ART JALYUZI",
-        adventages3:
-          "Многолетний опыт, индивидуальный подход, новейшие дизайны только для вас!",
-        adv: {
-          light_control_title: "Управление освещением",
-          light_control_description:
-            "С помощью жалюзи вы можете регулировать уровень освещения в комнате по своему желанию.",
-          adaptive_design_title: "Адаптивный дизайн",
-          adaptive_design_description:
-            "Просто, современно и со вкусом. Жалюзи подходят к любому стилю интерьера.",
-          easy_maintenance_title: "Лёгкий уход",
-          easy_maintenance_description:
-            "Не требует стирки как ткани — достаточно пройтись пылесосом или протереть тряпкой.",
-          sun_protection_title: "Защита от солнца",
-          sun_protection_description:
-            "Специальные материалы блокируют солнечные лучи и сохраняют прохладу в помещении.",
-          smart_control_title: "Умное управление",
-          smart_control_description:
-            "Современное и удобное управление с помощью телефона или пульта дистанционного управления.",
+        advantages: {
+          title_1: "НАШИ",
+          title_2: "ПРЕИМУЩЕСТВА",
+          guarantee: {
+            title: "Официальная гарантия — 10 лет",
+            description:
+              "Мы уверены в качестве своей работы, поэтому предоставляем официальную гарантию от компании Fasad Master сроком на 10 лет. Это возможно благодаря использованию проверенных технологий и надёжных материалов.",
+          },
+          materials: {
+            title: "Премиальные материалы",
+            description:
+              "Используем жидкий травертин на основе натуральной крошки из Узбекистана и высококачественный акриловый клей российского производства. Только проверенные поставщики и комплектующие.",
+          },
+          price: {
+            title: "Честная и прозрачная цена",
+            description:
+              "Стоимость работ соответствует среднерыночной, без скрытых доплат. С нами вы получите премиальный результат по честной цене от Fasad Master.",
+          },
+          button: "catalog.more",
+          imageAlt: "Преимущества",
         },
-        services: {
-          installation_hashtag: "#Установка жалюзи",
-          installation_title: "Профессионально устанавливаем жалюзи",
-          installation_description:
-            "Наши опытные мастера установят жалюзи правильно и безопасно",
-          free_measurement_hashtag: "#Бесплатный замер",
-          free_measurement_title:
-            "Приезжаем к вам домой и снимаем точные размеры",
-          free_measurement_description:
-            "Для удобства наших клиентов бесплатная услуга замера решает эту задачу легко и просто",
-          delivery_hashtag: "#Доставка",
-          delivery_title: "Быстрая и надежная доставка",
-          delivery_description:
-            "Удобная и быстрая доставка по вашему расписанию – ваш продукт будет доставлен в сохранности",
+        why: {
+          title_1: "ПОЧЕМУ",
+          title_2: "ВЫБИРАЮТ НАС",
+          reason1: {
+            title: "Опыт",
+            text: "В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
+          },
+          reason2: {
+            title: "Индивидуальный подход",
+            text: "В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
+          },
+          reason3: {
+            title: "Качество и надёжность",
+            text: "В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
+          },
+          reason4: {
+            title: "Прозрачность",
+            text: "В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
+          },
+          imageAlt: "Причина выбора",
         },
-        catalog1: "Наши услуги",
-        created_by: "Разработчик: ",
-        copyright: "© Copyright 2025 Все права защищены",
-        ism: "Имя: ",
-        tel: "Номер телефона: ",
-        succesMessage: "Сообщение успешно отправлено.",
-        errorMessage: "Произошла ошибка при отправке сообщения.",
-        botMessage: "Новое сообщение",
+        about: {
+          title_1: "О КОМПАНИИ",
+          title_2: "ФАСАД МАСТЕР",
+          paragraph_1:
+            "ООО ФАСАД МАСТЕР более 10 лет работает на рынке строительных услуг. Территориально компания находится в Ташкенте, имеет в штате более 90+ специалистов и располагает обширной базой собственных материально-технических ресурсов. Наша основная специализация — фасадные работы любой сложности. На счету компании более 400 объектов и опыт отделки фасадов жидким травертином, песчаником, кирпичом, натуральным камнем, различными видами штукатурки и другими материалами. Отделка фасадов решает сразу две задачи: придание зданию эстетического вида и защита поверхности от воздействия внешних факторов.",
+          paragraph_2:
+            "Репутация — наша ключевая ценность. Выполняя отделочные работы в Ташкенте, мы придерживаемся высоких стандартов качества и стараемся отвечать самым высоким требованиям заказчиков. В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
+        },
+        contacts: {
+          title:
+            "Вы можете вызвать прораба на Ваш участок и получить подробную консультацию",
+          subtitle: "Оставьте Ваши контакты и наш менеджер свяжется с Вами",
+          namePlaceholder: "Имя",
+          phonePlaceholder: "Телефон",
+          button: "Отправить",
+          privacy: "Ваши данные не будут переданы 3-м лицам. Конфиденциально!",
+          success: "Заявка успешно отправлена!",
+          error: "Ошибка при отправке заявки",
+        },
+        portfolio: {
+          title_1: "НАШИ",
+          title_2: "РАБОТЫ",
+          imageAlt: "Наши работы",
+        },
+        footer: {
+          services: {
+            title: "Услуги",
+            travertine: "Травертин",
+            alucobond: "Алюкобонд",
+            natural_stone: "Натуральный камень",
+          },
+          about: {
+            title: "О нас",
+            company: "Компания",
+            history: "История компании",
+            advantages: "Наша преимущества",
+          },
+          portfolio: {
+            title: "Портфолио",
+            works: "Наши работы",
+          },
+          contacts: {
+            title: "Контакты",
+            phone: "+99899 810 70 90",
+          },
+          copyright: "Копирайт: © {{year}} Fasad Master. Все права защищены.",
+          developed_by: "Разработала команда",
+        },
+        notfound: {
+          imageAlt: "404 ошибка",
+          title: "Страница не найдена",
+          button: "Главная страница",
+        },
+        company_history: {
+          title: "ИСТОРИЯ КОМПАНИИ",
+          loading: "Загрузка...",
+          guarantee: {
+            title: "Официальная гарантия — 10 лет",
+          },
+          materials: {
+            title: "Премиальные материалы",
+          },
+          price: {
+            title: "Честная и прозрачная цена",
+          },
+        },
+        catalog: {
+          title_1: "НАШИ",
+          title_2: "УСЛУГИ",
+          more: "Подробнее",
+        },
+        contact_form: {
+          heading: "Наши контакты",
+          short_about: "Коротко о нас",
+          company_description:
+            "Fasad Master — надёжная компания по фасадным услугам.",
+          form_heading: "Оставьте Ваши контакты",
+          thanks: "Спасибо! Мы скоро с вами свяжемся.",
+          name: "Имя",
+          phone: "Телефон",
+          send: "Отправить",
+          privacy:
+            "Ваши данные не будут переданы третьим лицам. Конфиденциально!",
+        },
+      },
+    },
+    en: {
+      translation: {
+        Boglanish: "Contact Us",
+        navbar: {
+          logoAlt: "Logo",
+          phoneNumber: "+99899 810 70 90",
+          languageAlt: "Current language",
+          lang: {
+            uz: "Uzbek",
+            ru: "Russian",
+            en: "English",
+          },
+        },
+        links: {
+          about_us: "About Us",
+          portfolio: "Portfolio",
+          services: "Services",
+          contacts: "Contact",
+        },
+        advantages: {
+          title_1: "OUR",
+          title_2: "ADVANTAGES",
+          guarantee: {
+            title: "Official warranty — 10 years",
+            description:
+              "We are confident in our quality, so we offer an official 10-year warranty from Fasad Master. This is possible thanks to reliable technology and materials.",
+          },
+          materials: {
+            title: "Premium materials",
+            description:
+              "We use liquid travertine based on natural crumbs from Uzbekistan and high-quality acrylic glue from Russia.",
+          },
+          price: {
+            title: "Fair and transparent pricing",
+            description:
+              "Prices are market average, no hidden fees. You get premium results at a fair price with Fasad Master.",
+          },
+          button: "More",
+          imageAlt: "Advantages",
+        },
+        why: {
+          title_1: "WHY",
+          title_2: "CHOOSE US",
+          reason1: {
+            title: "Experience",
+            text: "We follow strict standards: certified materials, solid contracts, fair pricing, and full self-sufficiency.",
+          },
+          reason2: {
+            title: "Individual approach",
+            text: "We follow strict standards: certified materials, solid contracts, fair pricing, and full self-sufficiency.",
+          },
+          reason3: {
+            title: "Quality and reliability",
+            text: "We follow strict standards: certified materials, solid contracts, fair pricing, and full self-sufficiency.",
+          },
+          reason4: {
+            title: "Transparency",
+            text: "We follow strict standards: certified materials, solid contracts, fair pricing, and full self-sufficiency.",
+          },
+          imageAlt: "Why choose",
+        },
+        about: {
+          title_1: "ABOUT",
+          title_2: "FASAD MASTER",
+          paragraph_1:
+            "Fasad Master has been in the construction business for over 10 years. Based in Tashkent, it has 90+ specialists and its own technical base. We specialize in all kinds of façade works.",
+          paragraph_2:
+            "Reputation is our main value. We follow high standards and meet client expectations in every project.",
+        },
+        contacts: {
+          title:
+            "You can request a supervisor to visit your site for consultation",
+          subtitle: "Leave your contact info and our manager will call you",
+          namePlaceholder: "Name",
+          phonePlaceholder: "Phone",
+          button: "Send",
+          privacy: "Your data will not be shared. Confidential!",
+          success: "Request sent successfully!",
+          error: "An error occurred while sending",
+        },
+        portfolio: {
+          title_1: "OUR",
+          title_2: "PROJECTS",
+          imageAlt: "Our work",
+        },
+        footer: {
+          services: {
+            title: "Services",
+            travertine: "Travertine",
+            alucobond: "Alucobond",
+            natural_stone: "Natural stone",
+          },
+          about: {
+            title: "About",
+            company: "Company",
+            history: "History",
+            advantages: "Advantages",
+          },
+          portfolio: {
+            title: "Portfolio",
+            works: "Our works",
+          },
+          contacts: {
+            title: "Contacts",
+            phone: "+99899 810 70 90",
+          },
+          copyright: "Copyright © {{year}} Fasad Master. All rights reserved.",
+          developed_by: "Developed by",
+        },
+        notfound: {
+          imageAlt: "404 error",
+          title: "Page not found",
+          button: "Go to homepage",
+        },
+        company_history: {
+          title: "COMPANY HISTORY",
+          loading: "Loading...",
+          guarantee: {
+            title: "Official warranty — 10 years",
+          },
+          materials: {
+            title: "Premium materials",
+          },
+          price: {
+            title: "Transparent price",
+          },
+        },
+        catalog: {
+          title_1: "OUR",
+          title_2: "SERVICES",
+          more: "More",
+        },
+        contact_form: {
+          heading: "Our Contacts",
+          short_about: "About Us",
+          company_description:
+            "Fasad Master is a reliable provider of facade services.",
+          form_heading: "Leave your contact info",
+          thanks: "Thank you! We'll contact you soon.",
+          name: "Name",
+          phone: "Phone",
+          send: "Send",
+          privacy: "Your data will be kept confidential.",
+        },
       },
     },
   },

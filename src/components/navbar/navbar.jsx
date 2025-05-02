@@ -84,7 +84,6 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-
         <div className="md:hidden">
           <TemporaryDrawer />
         </div>

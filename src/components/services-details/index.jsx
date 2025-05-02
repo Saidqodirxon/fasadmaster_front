@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const ServiceByCategoryIdDetails = () => {
   const { id } = useParams();
   const [categoryName, setCategoryName] = useState("");
   const [view1, setView1] = useState([]);
   const [view2, setView2] = useState([]);
+  const { i18n, t } = useTranslation();
+  const currentLang = i18n.language || "uz";
 
   useEffect(() => {
     axios.get(`https://back.fasadmaster.uz/categories`).then((res) => {
       const cat = res.data.data.find((c) => c._id === id);
-      if (cat) setCategoryName(cat.name_ru);
+      if (cat) setCategoryName(cat[`name_${currentLang}`] || cat.name_uz);
     });
 
     axios
@@ -21,7 +24,13 @@ const ServiceByCategoryIdDetails = () => {
     axios
       .get(`https://back.fasadmaster.uz/services?view=2&categoryId=${id}`)
       .then((res) => setView2(res.data.data));
-  }, [id]);
+  }, [id, currentLang]);
+
+  const getName = (item) => item[`name_${currentLang}`] || item.name_uz;
+  const getDescription = (item) =>
+    (item[`description_${currentLang}`] || item.description_uz).split(
+      /\n|\r\n|\r/
+    );
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
@@ -31,13 +40,13 @@ const ServiceByCategoryIdDetails = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <h1 className="text-white text-2xl md:text-4xl font-semibold">
-            Наши Услуги
+            {t("Наши Услуги")}
           </h1>
         </div>
       </div>
 
-      <h2 className=" text-2xl md:text-3xl font-semibold text-center mb-10">
-        ВИДЫ{" "}
+      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
+        {t("ВИДЫ")}{" "}
         <span className="text-[#71914B]">{categoryName?.toUpperCase()}</span>
       </h2>
 
@@ -49,14 +58,14 @@ const ServiceByCategoryIdDetails = () => {
           >
             <img
               src={item.image[0]?.url}
-              alt={item.name_ru}
+              alt={getName(item)}
               className="w-full h-32 object-cover rounded mb-3"
             />
             <button className="bg-[#71914B] text-white text-sm px-4 py-1 rounded-full mb-2">
-              От {Number(item.price).toLocaleString()} сум/м²
+              {t("От")} {Number(item.price).toLocaleString()} {t("сум/м²")}
             </button>
             <ul className="text-sm text-gray-600 space-y-1">
-              {item.description_ru.split(/\n|\r\n|\r/).map((line, i) => (
+              {getDescription(item).map((line, i) => (
                 <li key={i}>{line}</li>
               ))}
             </ul>
@@ -69,17 +78,17 @@ const ServiceByCategoryIdDetails = () => {
           key={item._id}
           className="flex flex-col md:flex-row items-center gap-6 mb-12"
         >
-          <div className="w-[50%] ">
+          <div className="w-[50%]">
             <h3 className="text-xl font-semibold text-[#71914B] mb-4">
-              {item.name_ru}
+              {getName(item)}
             </h3>
             <p className="w-[50%] flex flex-wrap text-sm text-gray-700 whitespace-pre-line">
-              {item.description_ru}
+              {item[`description_${currentLang}`] || item.description_uz}
             </p>
           </div>
           <img
             src={item.image[0]?.url}
-            alt={item.name_ru}
+            alt={getName(item)}
             className="md:w-[50%] w-full rounded-xl object-cover"
           />
         </div>

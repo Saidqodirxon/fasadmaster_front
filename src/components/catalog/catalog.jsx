@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Catalog = () => {
   const [categories, setCategories] = useState([]);
+  const { i18n, t } = useTranslation();
+  const currentLang = i18n.language || "uz";
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,16 +18,17 @@ const Catalog = () => {
       .catch((error) => {
         console.error("Xatolik yuz berdi:", error);
       });
-  }, []);
+  }, [currentLang]); // Til o‘zgarsa qayta render
 
-  const handleClick = (id) => {
-    navigate(`/category/${id}`);
+  const getCategoryName = (category) => {
+    return category[`name_${currentLang}`] || category.name_uz;
   };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 mt-12">
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
-        НАШИ <span className="text-[#71914B]">УСЛУГИ</span>
+        {t("catalog.title_1")}{" "}
+        <span className="text-[#71914B]">{t("catalog.title_2")}</span>
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
         {categories.map((cat) => (
@@ -34,17 +38,17 @@ const Catalog = () => {
           >
             <img
               src={cat.image?.url}
-              alt={cat.name_ru}
+              alt={getCategoryName(cat)}
               className="w-full h-32 object-cover rounded mb-3"
             />
             <p className="font-medium text-gray-700 text-sm md:text-base mb-4">
-              {cat.name_ru}
+              {getCategoryName(cat)}
             </p>
             <Link
               to={`/services/${cat._id}`}
               className="bg-[#71914B] text-white px-4 py-1 text-sm rounded-full hover:bg-[#71914B] transition"
             >
-              Подробнее
+              {t("catalog.more")}
             </Link>
           </div>
         ))}

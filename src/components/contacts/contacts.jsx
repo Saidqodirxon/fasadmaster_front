@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
 
 const Contacts = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({ name: "", phone: "" });
 
   const handleChange = (e) => {
@@ -14,10 +16,10 @@ const Contacts = () => {
     e.preventDefault();
     try {
       await axios.post("https://back.fasadmaster.uz/contacts", formData);
-      toast.success("Заявка успешно отправлена!");
+      toast.success(t("contacts.success"));
       setFormData({ name: "", phone: "" });
     } catch (error) {
-      toast.error("Ошибка при отправке заявки");
+      toast.error(t("contacts.error"));
     }
   };
 
@@ -29,30 +31,27 @@ const Contacts = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-10">
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold leading-relaxed">
-            Вы можете вызвать прораба на Ваш участок и получить подробную
-            консультацию
+            {t("contacts.title")}
           </h2>
         </div>
         <form
           onSubmit={handleSubmit}
-          className=" p-6 rounded-xl space-y-4 text-white"
+          className="p-6 rounded-xl space-y-4 text-white"
         >
-          <p className="font-medium">
-            Оставьте Ваши контакты и наш менеджер свяжется с Вами
-          </p>
+          <p className="font-medium">{t("contacts.subtitle")}</p>
           <input
             type="text"
             name="name"
-            placeholder="Имя"
+            placeholder={t("contacts.namePlaceholder")}
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border rounded bg-inherit "
+            className="w-full px-4 py-2 border rounded bg-inherit"
           />
           <input
             type="tel"
             name="phone"
-            placeholder="Телефон"
+            placeholder={t("contacts.phonePlaceholder")}
             value={formData.phone || "+998"}
             onChange={handleChange}
             required
@@ -62,11 +61,9 @@ const Contacts = () => {
             type="submit"
             className="w-full bg-[#71914B] text-white py-2 rounded hover:bg-[#71914B] transition"
           >
-            Отправить
+            {t("contacts.button")}
           </button>
-          <p className="text-xs text-white mt-2">
-            Ваши данные не будут переданы 3-м лицам. Конфиденциально!
-          </p>
+          <p className="text-xs text-white mt-2">{t("contacts.privacy")}</p>
         </form>
       </div>
       <ToastContainer position="bottom-center" autoClose={3000} />

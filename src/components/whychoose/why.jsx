@@ -1,46 +1,50 @@
 import React from "react";
 import { CheckCircle, FileText, ClipboardList, Users } from "lucide-react";
-
-const reasons = [
-  {
-    icon: <ClipboardList className="text-[#71914B] w-6 h-6" />,
-    title: "Опыт",
-    text: "В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
-  },
-  {
-    image: "/why/img1.png",
-  },
-  {
-    icon: <Users className="text-[#71914B] w-6 h-6" />,
-    title: "Индивидуальный подход",
-    text: "В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
-  },
-  {
-    image: "/why/img2.png",
-  },
-  {
-    icon: <CheckCircle className="text-[#71914B] w-6 h-6" />,
-    title: "Качество и надёжность",
-    text: "В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
-  },
-  {
-    image: "/why/img3.png",
-  },
-  {
-    icon: <FileText className="text-[#71914B] w-6 h-6" />,
-    title: "Прозрачность",
-    text: "В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
-  },
-  {
-    image: "/why/img4.png",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const WhyChooseUs = () => {
+  const { t } = useTranslation();
+
+  const reasons = [
+    {
+      icon: <ClipboardList className="text-[#71914B] w-6 h-6" />,
+      title: t("why.reason1.title"),
+      text: t("why.reason1.text"),
+    },
+    {
+      image: "/why/img1.png",
+    },
+    {
+      icon: <Users className="text-[#71914B] w-6 h-6" />,
+      title: t("why.reason2.title"),
+      text: t("why.reason2.text"),
+    },
+    {
+      image: "/why/img2.png",
+    },
+    {
+      icon: <CheckCircle className="text-[#71914B] w-6 h-6" />,
+      title: t("why.reason3.title"),
+      text: t("why.reason3.text"),
+    },
+    {
+      image: "/why/img3.png",
+    },
+    {
+      icon: <FileText className="text-[#71914B] w-6 h-6" />,
+      title: t("why.reason4.title"),
+      text: t("why.reason4.text"),
+    },
+    {
+      image: "/why/img4.png",
+    },
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
-        ПОЧЕМУ <span className="text-[#71914B]">ВЫБИРАЮТ НАС</span>
+        {t("why.title_1")}{" "}
+        <span className="text-[#71914B]">{t("why.title_2")}</span>
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {reasons.map((item, idx) => (
@@ -51,7 +55,7 @@ const WhyChooseUs = () => {
             {item.image ? (
               <img
                 src={item.image}
-                alt="Reason"
+                alt={t("why.imageAlt")}
                 className="w-full h-48 object-cover rounded-lg"
               />
             ) : (

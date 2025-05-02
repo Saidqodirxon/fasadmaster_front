@@ -4,8 +4,6 @@ import Hero from "../../components/hero/hero";
 import Contacts from "../../components/contacts/contacts";
 
 import Adventages from "../../components/adventages/adventages";
-import Services from "../../components/services/services";
-import Catalog from "../../components/catalog/catalog";
 import Portfolios from "../../components/portfolios/portfolios";
 
 import "./main.scss";

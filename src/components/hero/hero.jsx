@@ -47,7 +47,7 @@ function Hero() {
                   {currentLang === "ru" ? banner.name_ru : banner.name_uz}
                 </h2>
                 <a
-                  href="#contacts"
+                  href="contacts"
                   className="inline-block bg-[#71914B] text-white hover:bg-white hover:text-[#71914B] px-8 py-3 rounded-lg transition-colors duration-300"
                 >
                   {t("Boglanish")}

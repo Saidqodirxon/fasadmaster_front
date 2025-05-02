@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const ServicesMain = () => {
   const [services, setServices] = useState([]);
+  const { i18n, t } = useTranslation();
+  const currentLang = i18n.language || "uz";
 
   useEffect(() => {
     axios
@@ -13,7 +17,17 @@ const ServicesMain = () => {
       .catch((error) => {
         console.error("Xatolik yuz berdi:", error);
       });
-  }, []);
+  }, [currentLang]); // ⬅️ Til o‘zgarganda qayta chaqiradi
+
+  const getName = (service) => {
+    return service[`name_${currentLang}`] || service.name_uz;
+  };
+
+  const getDescriptionLines = (service) => {
+    const desc =
+      service[`description_${currentLang}`] || service.description_uz;
+    return desc.split(/\\n|\\r\\n|\\r|\n/).filter((line) => line.trim() !== "");
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10 space-y-8">
@@ -25,30 +39,30 @@ const ServicesMain = () => {
           <div className="md:w-1/2">
             <img
               src={service.image[0]?.url}
-              alt={service.name_ru}
+              alt={getName(service)}
               className="w-full h-48 object-cover rounded-lg"
             />
             <div className="flex justify-center mt-4 md:mt-2">
-              <button className="bg-[#71914B] text-white px-8 py-2 rounded-full hover:bg-[#71914B] transition">
-                Подробнее
-              </button>
+              <Link
+                to={`/services`}
+                className="bg-[#71914B] text-white px-8 py-2 rounded-full hover:bg-[#71914B] transition"
+              >
+                {t("catalog.more")}
+              </Link>
             </div>
           </div>
           <div className="md:w-1/2 mt-4 md:mt-0">
             <h2 className="text-xl font-semibold text-[#71914B]">
-              {service.name_ru}
+              {getName(service)}
             </h2>
             <p className="text-gray-700 mt-2">
-              Что входит в стоимость : От{" "}
+              {t("Что входит в стоимость")} : От{" "}
               {Number(service.price).toLocaleString()} сум/м
             </p>
             <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
-              {service.description_ru
-                .split(/\\n|\\r\\n|\\r|\n/)
-                .filter((line) => line.trim() !== "")
-                .map((line, idx) => (
-                  <li key={idx}>{line}</li>
-                ))}
+              {getDescriptionLines(service).map((line, idx) => (
+                <li key={idx}>{line}</li>
+              ))}
             </ul>
           </div>
         </div>

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", phone_number: "" });
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useTranslation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +29,7 @@ export default function ContactForm() {
         className="h-48 md:h-64 bg-cover bg-center flex items-center justify-center text-white text-2xl md:text-4xl font-semibold"
         style={{ backgroundImage: "url('/contacts.png')" }}
       >
-        Наши контакты
+        {t("contact_form.heading")}
       </div>
 
       {/* Kontent */}
@@ -35,33 +37,28 @@ export default function ContactForm() {
         {/* Chap: Matn */}
         <div className="w-full lg:w-1/2">
           <h2 className="text-[#71914B] text-2xl font-bold mb-4">
-            Короток о нас
+            {t("contact_form.short_about")}
           </h2>
           <p className="text-gray-700 text-sm leading-7">
-            ООО ФАСАД МАСТЕР более 10 лет работает на рынке строительных услуг.
-            Территориально компания находится в Ташкенте, имеет в штате более
-            90+ специалистов и располагает обширной базой собственных
-            материально-технических ресурсов. Наша основная специализация –
-            фасадные работы любой сложности. На счету компании более 400
-            объектов и опыт отделки фасадов каждым...
+            {t("contact_form.company_description")}
           </p>
         </div>
 
         {/* O‘ng: Forma */}
         <div className="w-full lg:w-1/2 bg-gray-50 p-6 rounded-lg shadow-md">
           <h3 className="text-gray-800 text-lg font-medium mb-4">
-            Оставьте Ваши контакты и наш менеджер свяжется с Вами
+            {t("contact_form.form_heading")}
           </h3>
           {submitted ? (
             <p className="text-[#71914B] font-semibold">
-              Спасибо! Мы скоро с вами свяжемся.
+              {t("contact_form.thanks")}
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
                 name="name"
-                placeholder="Имя"
+                placeholder={t("contact_form.name")}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -70,7 +67,7 @@ export default function ContactForm() {
               <input
                 type="tel"
                 name="phone_number"
-                placeholder="Телефон"
+                placeholder={t("contact_form.phone")}
                 value={formData.phone_number}
                 onChange={handleChange}
                 required
@@ -80,10 +77,10 @@ export default function ContactForm() {
                 type="submit"
                 className="w-full bg-[#71914B] hover:bg-[#71914B] text-white font-bold py-3 rounded transition"
               >
-                Отправить
+                {t("contact_form.send")}
               </button>
               <p className="text-xs text-gray-500 text-center">
-                Ваша заявка не будет передана 3-им лицам! Конфиденциально!
+                {t("contact_form.privacy")}
               </p>
             </form>
           )}

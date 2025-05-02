@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const ServicesGridMain = () => {
   const [categories, setCategories] = useState([]);
+  const { i18n, t } = useTranslation();
+  const currentLang = i18n.language || "uz";
 
   useEffect(() => {
     axios
@@ -13,12 +17,16 @@ const ServicesGridMain = () => {
       .catch((error) => {
         console.error("Kategoriya yuklashda xatolik:", error);
       });
-  }, []);
+  }, [currentLang]); // Til o‘zgarganini kuzatamiz
+
+  const getCategoryName = (category) => {
+    return category[`name_${currentLang}`] || category.name_uz;
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">
-        НАШИ <span className="text-[#71914B]">УСЛУГИ</span>
+        {t("НАШИ")} <span className="text-[#71914B]">{t("УСЛУГИ")}</span>
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {categories.map((category) => (
@@ -28,15 +36,18 @@ const ServicesGridMain = () => {
           >
             <img
               src={category.image?.url}
-              alt={category.name_ru}
+              alt={getCategoryName(category)}
               className="w-full h-40 object-cover rounded-lg mb-4"
             />
             <h3 className="text-md font-medium text-gray-800 mb-2">
-              {category.name_ru}
+              {getCategoryName(category)}
             </h3>
-            <button className="bg-[#71914B] text-white px-6 py-2 rounded-full hover:bg-[#71914B] transition">
-              Подробнее
-            </button>
+            <Link
+              to={`/services/${category._id}`}
+              className="bg-[#71914B] text-white px-6 py-2 rounded-full hover:bg-[#71914B] transition"
+            >
+              {t("catalog.more")}
+            </Link>
           </div>
         ))}
       </div>

@@ -1,56 +1,56 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
 
 const Advantages = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
       <div>
         <h2 className="text-2xl md:text-3xl font-semibold text-center md:text-left">
-          НАШИ <span className="text-[#71914B]">ПРЕИМУЩЕСТВА</span>
+          {t("advantages.title_1")}{" "}
+          <span className="text-[#71914B]">{t("advantages.title_2")}</span>
         </h2>
 
         <div className="mt-6 space-y-6 text-gray-700">
           <div>
             <h3 className="text-[#71914B] font-semibold">
-              Официальная гарантия — 10 лет
+              {t("advantages.guarantee.title")}
             </h3>
             <p className="text-sm mt-1">
-              Мы уверены в качестве своей работы, поэтому предоставляем
-              официальную гарантию от компании Fasad Master сроком на 10 лет.
-              Это возможно благодаря использованию проверенных технологий и
-              надёжных материалов.
+              {t("advantages.guarantee.description")}
             </p>
           </div>
           <div>
             <h3 className="text-[#71914B] font-semibold">
-              Премиальные материалы
+              {t("advantages.materials.title")}
             </h3>
             <p className="text-sm mt-1">
-              Используем жидкий травертин на основе натуральной крошки из
-              Узбекистана и высококачественный акриловый клей российского
-              производства. Только проверенные поставщики и комплектующие.
+              {t("advantages.materials.description")}
             </p>
           </div>
           <div>
             <h3 className="text-[#71914B] font-semibold">
-              Честная и прозрачная цена
+              {t("advantages.price.title")}
             </h3>
-            <p className="text-sm mt-1">
-              Стоимость работ соответствует среднерыночной, без скрытых доплат.
-              С нами вы получите премиальный результат по честной цене от Fasad
-              Master.
-            </p>
+            <p className="text-sm mt-1">{t("advantages.price.description")}</p>
           </div>
         </div>
 
-        <button className="mt-6 bg-[#71914B] text-white px-8 py-2 rounded-full hover:bg-[#71914B] transition">
-          Подробнее
+        <button
+          onClick={() => navigate("/projects")}
+          className="mt-10 bg-[#71914B] text-white px-8 py-2 rounded-full hover:bg-[#71914B] transition"
+        >
+          {t("advantages.button")}
         </button>
       </div>
 
       <div>
         <img
           src="/adv.png"
-          alt="Преимущества"
+          alt={t("advantages.imageAlt")}
           className="rounded-xl w-full object-cover"
         />
       </div>
