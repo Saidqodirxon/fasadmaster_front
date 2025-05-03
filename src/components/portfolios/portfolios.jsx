@@ -9,7 +9,7 @@ const Portfolios = () => {
   useEffect(() => {
     axios
       .get(
-        "https://back.fasadmaster.uz/portfolios?is_visible=true&page[limit]=8"
+        "https://back.fasadmaster.uz/portfolios?is_visible=true&page[limit]=10000"
       )
       .then((res) => {
         setImages(res.data.data);
