@@ -48,7 +48,7 @@ function Hero() {
               {/* Kontent */}
               <div className="relative z-10 md:text-start text-center text-white max-w-xl md:mx-[8vw] mx-[1vw]">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                  {currentLang === "ru" ? banner.name_ru : banner.name_uz}
+                  {currentLang === "ru" ? banner.name_ru : banner.name_uz}  
                 </h2>
                 <a
                   href="contacts"

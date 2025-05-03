@@ -48,6 +48,7 @@ const Footer = () => {
               <li key={cat.id}>
                 <Link
                   to={`/services/${cat._id}`}
+                  key={cat._id}
                   className="hover:text-white flex items-center gap-2 group"
                 >
                   {/* <FaChevronRight className="text-[#71914B] group-hover:text-[#72914bb0] transition" /> */}

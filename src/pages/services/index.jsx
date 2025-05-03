@@ -13,7 +13,7 @@ const ServicesPage = () => {
     <>
       <Navbar />
       <div
-        className="relative w-full h-52 md:h-64 bg-cover bg-center rounded-xl mb-10"
+        className="relative w-full h-52 md:h-64 bg-cover bg-center rounded-xl mt-20"
         style={{ backgroundImage: "url('/contacts.png')" }}
       >
         {/* Overlay */}

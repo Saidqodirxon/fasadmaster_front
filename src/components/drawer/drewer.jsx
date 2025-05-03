@@ -16,7 +16,7 @@ export default function TemporaryDrawer() {
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
   const [language, setLanguage] = useState(
-    localStorage.getItem("i18nextLng") || "uz"
+    localStorage.getItem("i18nextLng") || "ru"
   );
 
   useEffect(() => {

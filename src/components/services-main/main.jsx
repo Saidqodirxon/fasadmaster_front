@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ServicesMain = () => {
   const [services, setServices] = useState([]);
   const { i18n, t } = useTranslation();
-  const currentLang = i18n.language || "uz";
+  const currentLang = i18n.language || "ru";
 
   useEffect(() => {
     axios
@@ -56,8 +56,8 @@ const ServicesMain = () => {
               {getName(service)}
             </h2>
             <p className="text-gray-700 mt-2">
-              {t("Что входит в стоимость")} : От{" "}
-              {Number(service.price).toLocaleString()} сум/м
+              {t("narxi")}: {Number(service.price).toLocaleString()}{" "}
+              {t("summ2")}
             </p>
             <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
               {getDescriptionLines(service).map((line, idx) => (

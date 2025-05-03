@@ -9,7 +9,7 @@ const ServiceByCategoryIdDetails = () => {
   const [view1, setView1] = useState([]);
   const [view2, setView2] = useState([]);
   const { i18n, t } = useTranslation();
-  const currentLang = i18n.language || "uz";
+  const currentLang = i18n.language || "ru";
 
   useEffect(() => {
     axios.get(`https://back.fasadmaster.uz/categories`).then((res) => {
@@ -50,7 +50,7 @@ const ServiceByCategoryIdDetails = () => {
               className="w-full h-32 object-cover rounded mb-3"
             />
             <button className=" bg-[#71914B] hover:bg-[#72914bb0] text-white text-sm px-4 py-1 rounded-full mb-2">
-              {t("От")} {Number(item.price).toLocaleString()} {t("сум/м²")}
+              {t("narxi")}: {Number(item.price).toLocaleString()} {t("summ2")}
             </button>
             <ul className="text-sm text-gray-600 space-y-1">
               {getDescription(item).map((line, i) => (

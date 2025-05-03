@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 i18n.use(initReactI18next).init({
-  lng: localStorage.getItem("i18nextLng") || "uz",
+  lng: localStorage.getItem("i18nextLng") || "ru",
   resources: {
     uz: {
       translation: {
@@ -153,6 +153,8 @@ i18n.use(initReactI18next).init({
           title_1: "Бизнинг",
           title_2: "Мижозларимиз",
         },
+        narxi: "Narxi",
+        summ2: "so'm/m²",
       },
     },
     ru: {
@@ -305,6 +307,8 @@ i18n.use(initReactI18next).init({
           title_1: "Наши",
           title_2: "Клиенты",
         },
+        narxi: "Цена",
+        summ2: "сум/м²",
       },
     },
     en: {
@@ -456,6 +460,8 @@ i18n.use(initReactI18next).init({
           title_1: "Our",
           title_2: "Clients",
         },
+        narxi: "Price",
+        summ2: "UZS/m²",
       },
     },
   },

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 const Catalog = () => {
   const [categories, setCategories] = useState([]);
   const { i18n, t } = useTranslation();
-  const currentLang = i18n.language || "uz";
+  const currentLang = i18n.language || "ru";
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Catalog = () => {
   }, [currentLang]); // Til o‘zgarsa qayta render
 
   const getCategoryName = (category) => {
-    return category[`name_${currentLang}`] || category.name_uz;
+    return category[`name_${currentLang}`] || category.name_r;
   };
 
   return (
