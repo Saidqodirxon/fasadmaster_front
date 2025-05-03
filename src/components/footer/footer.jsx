@@ -47,7 +47,7 @@ const Footer = () => {
             {categories.map((cat) => (
               <li key={cat.id}>
                 <Link
-                  to={`/services/${cat.id}`}
+                  to={`/services/${cat._id}`}
                   className="hover:text-white flex items-center gap-2 group"
                 >
                   {/* <FaChevronRight className="text-[#71914B] group-hover:text-[#72914bb0] transition" /> */}
