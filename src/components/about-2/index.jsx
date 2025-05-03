@@ -88,17 +88,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="w-full overflow-hidden relative">
-        <iframe
-          src="https://yandex.uz/map-widget/v1/org/supersite_uz/239168011769/?ll=69.316086%2C41.358849&z=13.2"
-          width="100%"
-          height="400"
-          frameBorder="0"
-          allowFullScreen
-          title="Supersite.uz location"
-          style={{ position: "relative" }}
-        />
-      </div>
+ 
     </div>
   );
 }

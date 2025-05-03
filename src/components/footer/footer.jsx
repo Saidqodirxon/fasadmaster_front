@@ -78,7 +78,7 @@ const Footer = () => {
         {/* Ijtimoiy tarmoqlar va aloqa */}
         <div className="flex flex-col items-center md:items-start">
           <h4 className="font-semibold mb-2">{t("footer.contacts.title")}</h4>
-          <Link to={"tel:+998998107090"} className="text-sm text-gray-300">
+          <Link to={"tel:+998993062020"} className="text-sm text-gray-300">
             {t("footer.contacts.phone")}
           </Link>
 

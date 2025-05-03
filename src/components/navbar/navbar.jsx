@@ -94,10 +94,10 @@ const Navbar = () => {
         <div className="hidden md:flex gap-[2vw] justify-between items-center">
           <div className="flex flex-col">
             <Link
-              to={"tel:+998998107090"}
+              to={"tel:+998993062020"}
               className="cursor-pointer hover:text-[#71914B]"
             >
-              +99899 810 70 90
+              +998 99 306 20 20
             </Link>
             <div className="flex justify-center items-center gap-2">
               {[FaTelegramPlane, FaInstagram, FaYoutube, FaFacebookF].map(

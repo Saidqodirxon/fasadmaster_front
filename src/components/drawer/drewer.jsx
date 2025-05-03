@@ -92,11 +92,11 @@ export default function TemporaryDrawer() {
           {/* 📞 Telefon va 🌐 Til */}
           <div className="flex flex-col items-center gap-4 mb-6">
             <a
-              href="tel:+998337200005"
+              href="tel:+998993062020"
               className="flex items-center gap-2 bg-white  border-[#ccc] px-4 py-2 rounded-md"
             >
               <img src={phone} alt="phone" className="w-5" />
-              +998 33 720-00-05
+              +998 99 306 20 20
             </a>
             <div className="flex gap-3">
               {languages.map((lang) => (

@@ -16,7 +16,7 @@ i18n.use(initReactI18next).init({
         },
         navbar: {
           logoAlt: "Логотип",
-          phoneNumber: "+99899 810 70 90",
+          phoneNumber: "+998 99 306 20 20",
           languageAlt: "Жорий тил",
           lang: {
             uz: "Ўзбек",
@@ -108,7 +108,7 @@ i18n.use(initReactI18next).init({
           },
           contacts: {
             title: "Алоқа",
-            phone: "+99899 810 70 90",
+            phone: "+998 99 306 20 20",
           },
           copyright:
             "Муаллифлик ҳуқуқи © {{year}} Fasad Master. Барча ҳуқуқлар ҳимояланган.",
@@ -160,7 +160,7 @@ i18n.use(initReactI18next).init({
         Boglanish: "Связаться",
         navbar: {
           logoAlt: "Логотип",
-          phoneNumber: "+99899 810 70 90",
+          phoneNumber: "+998 99 306 20 20",
           languageAlt: "Текущий язык",
           lang: {
             uz: "Узбекский",
@@ -260,7 +260,7 @@ i18n.use(initReactI18next).init({
           },
           contacts: {
             title: "Контакты",
-            phone: "+99899 810 70 90",
+            phone: "+998 99 306 20 20",
           },
           copyright: "Копирайт: © {{year}} Fasad Master. Все права защищены.",
           developed_by: "Разработала команда",
@@ -312,7 +312,7 @@ i18n.use(initReactI18next).init({
         Boglanish: "Contact Us",
         navbar: {
           logoAlt: "Logo",
-          phoneNumber: "+99899 810 70 90",
+          phoneNumber: "+998 99 306 20 20",
           languageAlt: "Current language",
           lang: {
             uz: "Uzbek",
@@ -412,7 +412,7 @@ i18n.use(initReactI18next).init({
           },
           contacts: {
             title: "Contacts",
-            phone: "+99899 810 70 90",
+            phone: "+998 99 306 20 20",
           },
           copyright: "Copyright © {{year}} Fasad Master. All rights reserved.",
           developed_by: "Developed by",
