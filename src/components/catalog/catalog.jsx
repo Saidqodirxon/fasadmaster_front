@@ -46,7 +46,7 @@ const Catalog = () => {
             </p>
             <Link
               to={`/services/${cat._id}`}
-              className="bg-[#71914B] text-white px-4 py-1 text-sm rounded-full hover:bg-[#71914B] transition"
+              className=" bg-[#71914B] hover:bg-[#72914bb0] text-white px-4 py-1 text-sm rounded-full  transition"
             >
               {t("catalog.more")}
             </Link>

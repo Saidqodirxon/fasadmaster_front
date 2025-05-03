@@ -34,19 +34,7 @@ const ServiceByCategoryIdDetails = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <div
-        className="relative w-full h-52 md:h-64 bg-cover bg-center rounded-xl mb-10"
-        style={{ backgroundImage: "url('/contacts.png')" }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <h1 className="text-white text-2xl md:text-4xl font-semibold">
-            {t("Наши Услуги")}
-          </h1>
-        </div>
-      </div>
-
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
-        {t("ВИДЫ")}{" "}
         <span className="text-[#71914B]">{categoryName?.toUpperCase()}</span>
       </h2>
 
@@ -61,7 +49,7 @@ const ServiceByCategoryIdDetails = () => {
               alt={getName(item)}
               className="w-full h-32 object-cover rounded mb-3"
             />
-            <button className="bg-[#71914B] text-white text-sm px-4 py-1 rounded-full mb-2">
+            <button className=" bg-[#71914B] hover:bg-[#72914bb0] text-white text-sm px-4 py-1 rounded-full mb-2">
               {t("От")} {Number(item.price).toLocaleString()} {t("сум/м²")}
             </button>
             <ul className="text-sm text-gray-600 space-y-1">

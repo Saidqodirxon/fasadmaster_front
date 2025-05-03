@@ -30,6 +30,7 @@ export default function TemporaryDrawer() {
   };
 
   const pages = [
+    { key: "home", url: "/" },
     { key: "about_us", url: "/about" },
     { key: "portfolio", url: "/projects" },
     { key: "services", url: "/services" },

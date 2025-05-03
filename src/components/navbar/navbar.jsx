@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import {
   FaFacebook,
+  FaFacebookF,
   FaGlobe,
   FaInstagram,
   FaPhone,
   FaTelegram,
+  FaTelegramPlane,
   FaYoutube,
 } from "react-icons/fa";
 import logo from "/logo.png";
@@ -54,10 +56,11 @@ const Navbar = () => {
   }, [isOpen]);
 
   const pages = [
-    { key: "about_us", url: "about" },
-    { key: "portfolio", url: "projects" },
-    { key: "services", url: "services" },
-    { key: "contacts", url: "contacts" },
+    { key: "home", url: "/" },
+    { key: "about_us", url: "/about" },
+    { key: "portfolio", url: "/projects" },
+    { key: "services", url: "/services" },
+    { key: "contacts", url: "/contacts" },
   ];
 
   const languages = [
@@ -75,13 +78,13 @@ const Navbar = () => {
 
         <div className="flex justify-between gap-[2vw] md:border border-[#71914B] px-[3vw] py-[0.5vw] rounded-full">
           {pages.map((page) => (
-            <a
-              href={`/${page.url}`}
+            <Link
+              to={page.url}
               key={page.url}
               className="links font-medium text-[#212121] cursor-pointer"
             >
               {t(`links.${page.key}`)}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="md:hidden">
@@ -97,34 +100,17 @@ const Navbar = () => {
               +99899 810 70 90
             </Link>
             <div className="flex justify-center items-center gap-2">
-              <Link
-                to="https://t.me/uzbekistan_uz"
-                target="_blank"
-                className=" "
-              >
-                <FaTelegram className="cursor-pointer text-[#71914B] text-[1.5vw] hover:text-[#476f2d]" />
-              </Link>
-              <Link
-                className=""
-                to="https://www.instagram.com/uzbekistan_uz/"
-                target="_blank"
-              >
-                <FaInstagram className="cursor-pointer text-[#71914B] text-[1.5vw] hover:text-[#476f2d]" />
-              </Link>
-              <Link
-                className=""
-                to="https://www.facebook.com/uzbekistan_uz/"
-                target="_blank"
-              >
-                <FaFacebook className="cursor-pointer text-[#71914B] text-[1.5vw] hover:text-[#476f2d]" />
-              </Link>
-              <Link
-                className=""
-                to="https://www.youtube.com/@uzbekistan_uz"
-                target="_blank"
-              >
-                <FaYoutube className="cursor-pointer text-[#71914B] text-[1.5vw] hover:text-[#476f2d]" />
-              </Link>
+              {[FaTelegramPlane, FaInstagram, FaYoutube, FaFacebookF].map(
+                (Icon, i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="p-2 rounded-full bg-[#71914B] hover:bg-[#72914bb0] transition text-white"
+                  >
+                    <Icon />
+                  </a>
+                )
+              )}
             </div>
           </div>
           <div className="relative" ref={dropdownRef}>

@@ -45,7 +45,7 @@ const ServicesMain = () => {
             <div className="flex justify-center mt-4 md:mt-2">
               <Link
                 to={`/services`}
-                className="bg-[#71914B] text-white px-8 py-2 rounded-full hover:bg-[#71914B] transition"
+                className="bg-[#71914B] hover:bg-[#72914bb0] text-white px-8 py-2 rounded-full transition"
               >
                 {t("catalog.more")}
               </Link>

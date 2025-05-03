@@ -11,6 +11,7 @@ import ServicesMain from "../../components/services-main/main";
 import ServicesGridMain from "../../components/category-services-main";
 import WhyChooseUs from "../../components/whychoose/why";
 import AboutMain from "../../components/about-main/about";
+import Testimonials from "../../components/otziv";
 
 const Main = () => {
   return (
@@ -28,6 +29,7 @@ const Main = () => {
       <AboutMain />
       <Contacts />
       <Portfolios />
+      <Testimonials />
       <Footer />
     </>
   );

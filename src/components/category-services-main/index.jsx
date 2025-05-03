@@ -26,7 +26,8 @@ const ServicesGridMain = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">
-        {t("НАШИ")} <span className="text-[#71914B]">{t("УСЛУГИ")}</span>
+        {t("catalog.title_1")}{" "}
+        <span className="text-[#71914B]">{t("catalog.title_2")}</span>
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {categories.map((category) => (
@@ -44,7 +45,7 @@ const ServicesGridMain = () => {
             </h3>
             <Link
               to={`/services/${category._id}`}
-              className="bg-[#71914B] text-white px-6 py-2 rounded-full hover:bg-[#71914B] transition"
+              className=" bg-[#71914B] hover:bg-[#72914bb0] text-white px-6 py-2 rounded-full transition"
             >
               {t("catalog.more")}
             </Link>

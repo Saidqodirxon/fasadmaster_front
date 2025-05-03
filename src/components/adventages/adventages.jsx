@@ -41,7 +41,7 @@ const Advantages = () => {
 
         <button
           onClick={() => navigate("/projects")}
-          className="mt-10 bg-[#71914B] text-white px-8 py-2 rounded-full hover:bg-[#71914B] transition"
+          className="mt-10   text-white px-8 py-2 rounded-full bg-[#71914B] hover:bg-[#72914bb0] transition"
         >
           {t("advantages.button")}
         </button>

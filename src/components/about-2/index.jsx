@@ -1,6 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { toast } from "react-toastify";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", phone_number: "" });
@@ -12,29 +15,30 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handlePhoneChange = (value) => {
+    setFormData((prev) => ({ ...prev, phone_number: value }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://back.fasadmaster.uz/contacts", formData);
+      const payload = {
+        name: formData.name || "No name",
+        phone: formData.phone_number, // <-- aynan 'phone' bo'lishi kerak
+      };
+      await axios.post("https://back.fasadmaster.uz/contacts", payload);
+      toast.success(t("contacts.success"));
       setSubmitted(true);
+      setFormData({ name: "", phone_number: "" });
     } catch (err) {
       console.error("Xatolik:", err);
+      toast.error(t("contacts.error"));
     }
   };
 
   return (
     <div className="w-full bg-white">
-      {/* Banner */}
-      <div
-        className="h-48 md:h-64 bg-cover bg-center flex items-center justify-center text-white text-2xl md:text-4xl font-semibold"
-        style={{ backgroundImage: "url('/contacts.png')" }}
-      >
-        {t("contact_form.heading")}
-      </div>
-
-      {/* Kontent */}
       <div className="max-w-7xl mx-auto px-4 py-12 flex flex-col lg:flex-row gap-10">
-        {/* Chap: Matn */}
         <div className="w-full lg:w-1/2">
           <h2 className="text-[#71914B] text-2xl font-bold mb-4">
             {t("contact_form.short_about")}
@@ -44,50 +48,46 @@ export default function ContactForm() {
           </p>
         </div>
 
-        {/* O‘ng: Forma */}
         <div className="w-full lg:w-1/2 bg-gray-50 p-6 rounded-lg shadow-md">
           <h3 className="text-gray-800 text-lg font-medium mb-4">
             {t("contact_form.form_heading")}
           </h3>
-          {submitted ? (
-            <p className="text-[#71914B] font-semibold">
-              {t("contact_form.thanks")}
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder={t("contact_form.name")}
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full border border-gray-300 p-3 rounded"
+            />
+            <PhoneInput
+              country={"uz"}
+              value={formData.phone_number}
+              onChange={handlePhoneChange}
+              inputClass="!w-full !h-12 !pl-14 !pr-4 !border !border-gray-300 !rounded focus:!outline-none"
+              containerClass="!w-full"
+              buttonClass="!bg-white !border-r !border-gray-300 !rounded-l"
+              specialLabel=""
+              enableSearch
+              placeholder={t("contact_form.phone")}
+            />
+
+            <button
+              type="submit"
+              className="w-full  bg-[#71914B] hover:bg-[#72914bb0] text-white font-bold py-3 rounded transition"
+            >
+              {t("contact_form.send")}
+            </button>
+            <p className="text-xs text-gray-500 text-center">
+              {t("contact_form.privacy")}
             </p>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                name="name"
-                placeholder={t("contact_form.name")}
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-300 p-3 rounded"
-              />
-              <input
-                type="tel"
-                name="phone_number"
-                placeholder={t("contact_form.phone")}
-                value={formData.phone_number}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-300 p-3 rounded"
-              />
-              <button
-                type="submit"
-                className="w-full bg-[#71914B] hover:bg-[#71914B] text-white font-bold py-3 rounded transition"
-              >
-                {t("contact_form.send")}
-              </button>
-              <p className="text-xs text-gray-500 text-center">
-                {t("contact_form.privacy")}
-              </p>
-            </form>
-          )}
+          </form>
         </div>
       </div>
 
-      {/* XARITA */}
       <div className="w-full overflow-hidden relative">
         <iframe
           src="https://yandex.uz/map-widget/v1/org/supersite_uz/239168011769/?ll=69.316086%2C41.358849&z=13.2"

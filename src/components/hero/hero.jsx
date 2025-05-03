@@ -39,10 +39,14 @@ function Hero() {
         {banners.map((banner) => {
           const BannerContent = (
             <div
-              className="h-[100vh] bg-cover bg-center bg-no-repeat flex items-center md:justify-start  justify-center px-[6vw]"
+              className="relative h-[100dvh] bg-cover bg-center bg-no-repeat flex items-center md:justify-start justify-center px-[6vw] "
               style={{ backgroundImage: `url(${banner?.image?.url})` }}
             >
-              <div className="md:text-start text-center text-white max-w-xl md:mx-[8vw]  mx-[1vw]">
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black opacity-50"></div>
+
+              {/* Kontent */}
+              <div className="relative z-10 md:text-start text-center text-white max-w-xl md:mx-[8vw] mx-[1vw]">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">
                   {currentLang === "ru" ? banner.name_ru : banner.name_uz}
                 </h2>
