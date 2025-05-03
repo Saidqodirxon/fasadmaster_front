@@ -6,7 +6,7 @@ import "react-phone-input-2/lib/style.css";
 import { toast } from "react-toastify";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: "", phone_number: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
   const { t } = useTranslation();
 
@@ -16,7 +16,7 @@ export default function ContactForm() {
   };
 
   const handlePhoneChange = (value) => {
-    setFormData((prev) => ({ ...prev, phone_number: value }));
+    setFormData((prev) => ({ ...prev, phone: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -24,12 +24,12 @@ export default function ContactForm() {
     try {
       const payload = {
         name: formData.name || "No name",
-        phone: formData.phone_number, // <-- aynan 'phone' bo'lishi kerak
+        phone: formData.phone, // <-- aynan 'phone' bo'lishi kerak
       };
       await axios.post("https://back.fasadmaster.uz/contacts", payload);
       toast.success(t("contacts.success"));
       setSubmitted(true);
-      setFormData({ name: "", phone_number: "" });
+      setFormData({ name: "", phone: "" });
     } catch (err) {
       console.error("Xatolik:", err);
       toast.error(t("contacts.error"));
@@ -65,7 +65,7 @@ export default function ContactForm() {
             />
             <PhoneInput
               country={"uz"}
-              value={formData.phone_number}
+              value={formData.phone}
               onChange={handlePhoneChange}
               inputClass="!w-full !h-12 !pl-14 !pr-4 !border !border-gray-300 !rounded focus:!outline-none"
               containerClass="!w-full"

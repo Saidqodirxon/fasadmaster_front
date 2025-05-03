@@ -14,7 +14,7 @@ const Contacts = () => {
   };
 
   const handlePhoneChange = (value) => {
-    setFormData((prev) => ({ ...prev, phone_number: value }));
+    setFormData((prev) => ({ ...prev, phone: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -59,7 +59,7 @@ const Contacts = () => {
           />
           <PhoneInput
             country={"uz"}
-            value={formData.phone_number}
+            value={formData.phone}
             onChange={handlePhoneChange}
             inputClass="!w-full !h-12 !pl-14 !pr-4 !border !border-gray-300 !rounded focus:!outline-none !bg-inherit"
             containerClass="!w-full"
