@@ -153,8 +153,8 @@ i18n.use(initReactI18next).init({
           title_1: "Бизнинг",
           title_2: "Мижозларимиз",
         },
-        narxi: "Narxi",
-        summ2: "so'm/m²",
+        narxi: "Нархи",
+        summ2: "сўм/м²",
       },
     },
     ru: {
