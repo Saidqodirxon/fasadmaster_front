@@ -41,7 +41,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16">
+    <div className="max-w-7xl mx-auto">
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
         {t("why.title_1")}
         {"  "}

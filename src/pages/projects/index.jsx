@@ -3,9 +3,9 @@ import Footer from "../../components/footer/footer";
 import Advantages from "../../components/adventages/adventages";
 import AboutMain from "../../components/about-main/about";
 import Contacts from "../../components/contacts/contacts";
-import Portfolios from "../../components/portfolios/portfolios";
 import ContactForm from "../../components/about-2";
 import { useTranslation } from "react-i18next";
+import PortfoliosText from "../../components/portfolios/portfolioPage";
 
 const ProjectsPage = () => {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ const ProjectsPage = () => {
             {t("portfolio.title_1")} {t("portfolio.title_2")}
           </div>
         </div>
-        <Portfolios />
+        <PortfoliosText />
       </div>
       <Contacts />
       <Advantages />

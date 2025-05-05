@@ -17,19 +17,19 @@ export default function CompanyHistory() {
   const sections = [
     {
       key: "guarantee",
-      title: t("company_history.guarantee.title"),
+      // title: t("company_history.guarantee.title"),
       image: "/about/img1.png",
       field: "about",
     },
     {
       key: "materials",
-      title: t("company_history.materials.title"),
+      // title: t("company_history.materials.title"),
       image: "/about/img2.png",
       field: "adventages",
     },
     {
       key: "price",
-      title: t("company_history.price.title"),
+      // title: t("company_history.price.title"),
       image: "/about/img3.png",
       field: "history",
     },

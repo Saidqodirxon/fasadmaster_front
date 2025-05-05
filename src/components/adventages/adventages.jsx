@@ -7,14 +7,14 @@ const Advantages = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    <div className="max-w-7xl mx-auto px-4 pt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
       <div>
         <h2 className="text-2xl md:text-3xl font-semibold text-center md:text-left">
           {t("advantages.title_1")}{" "}
           <span className="text-[#71914B]">{t("advantages.title_2")}</span>
         </h2>
 
-        <div className="mt-6 space-y-6 text-gray-700">
+        <div className="mt-6 space-y-3 text-gray-700">
           <div>
             <h3 className="text-[#71914B] font-semibold">
               {t("advantages.guarantee.title")}

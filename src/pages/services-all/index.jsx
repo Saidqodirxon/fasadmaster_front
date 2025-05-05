@@ -1,12 +1,12 @@
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
-import Catalog from "../../components/catalog/catalog";
 import Advantages from "../../components/adventages/adventages";
 import AboutMain from "../../components/about-main/about";
 import Contacts from "../../components/contacts/contacts";
 import Portfolios from "../../components/portfolios/portfolios";
 
 import { useTranslation } from "react-i18next";
+import CatalogText from "../../components/catalog/catalogText";
 
 const ServicesAllPage = () => {
   const { t } = useTranslation();
@@ -23,7 +23,7 @@ const ServicesAllPage = () => {
           {t("catalog.title_1")} {t("catalog.title_2")}
         </div>
       </div>
-      <Catalog />
+      <CatalogText />
       <Advantages />
       <AboutMain />
       <Contacts />

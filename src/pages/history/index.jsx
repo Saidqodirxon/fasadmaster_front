@@ -20,7 +20,7 @@ const HistoryPage = () => {
           />
           <div className="absolute inset-0 bg-black opacity-50" />
           <div className="relative flex items-center justify-center h-full text-white text-2xl md:text-4xl font-semibold">
-            {t("about.title_1")} {t("about.title_2")}
+            {t("about.title_1")}
           </div>
         </div>
         <AboutMain />

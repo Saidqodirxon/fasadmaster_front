@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 
@@ -49,9 +49,15 @@ const ServiceByCategoryIdDetails = () => {
               alt={getName(item)}
               className="w-full h-32 object-cover rounded mb-3"
             />
-            <button className=" bg-[#71914B] hover:bg-[#72914bb0] text-white text-sm px-4 py-1 rounded-full mb-2">
+            <button
+              // to={"/contacts"}
+              className=" bg-[#71914B] text-white text-sm px-4 py-1 rounded-full mb-2"
+            >
               {t("narxi")}: {Number(item.price).toLocaleString()} {t("summ2")}
             </button>
+            <p className="font-medium text-gray-700 text-sm md:text-base mb-4">
+              {getName(item)}
+            </p>
             <ul className="text-sm text-gray-600 space-y-1">
               {getDescription(item).map((line, i) => (
                 <li key={i}>{line}</li>

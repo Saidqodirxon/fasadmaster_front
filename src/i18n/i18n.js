@@ -150,8 +150,8 @@ i18n.use(initReactI18next).init({
           privacy: "Маълумотларингиз махфий сақланади.",
         },
         otziv: {
-          title_1: "Бизнинг",
-          title_2: "Мижозларимиз",
+          title_1: "Мижозларимиз",
+          title_2: "фикрлари",
         },
         narxi: "Нархи",
         summ2: "сўм/м²",
@@ -304,8 +304,8 @@ i18n.use(initReactI18next).init({
             "Ваши данные не будут переданы третьим лицам. Конфиденциально!",
         },
         otziv: {
-          title_1: "Наши",
-          title_2: "Клиенты",
+          title_1: "Отзывы",
+          title_2: "наших клиентов",
         },
         narxi: "Цена",
         summ2: "сум/м²",
@@ -457,8 +457,8 @@ i18n.use(initReactI18next).init({
           privacy: "Your data will be kept confidential.",
         },
         otziv: {
-          title_1: "Our",
-          title_2: "Clients",
+          title_1: "Customer",
+          title_2: "reviews",
         },
         narxi: "Price",
         summ2: "UZS/m²",

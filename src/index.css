@@ -16,3 +16,24 @@ body {
   /* overflow-x: hidden; */
   height: 100%;
 }
+
+@layer utilities {
+  .animate-ping-slow {
+    animation: ping-slow 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping-slow {
+    0% {
+      transform: scale(1);
+      opacity: 100%;
+    }
+    75% {
+      transform: scale(1.4);
+      opacity: 50%;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 100%;
+    }
+  }
+}

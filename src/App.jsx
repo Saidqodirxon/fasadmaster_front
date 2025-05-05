@@ -8,6 +8,7 @@ import ServicesPage from "./pages/services";
 import ProjectsPage from "./pages/projects";
 import ContactsPage from "./pages/contacts";
 import HistoryPage from "./pages/history";
+import CallButton from "./components/callBtn";
 
 function App() {
   const location = useLocation();
@@ -39,7 +40,7 @@ function App() {
             <Route path="/about" element={<HistoryPage />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
-          <ScrollToTopButton />
+          <CallButton />
         </>
       )}
     </main>
