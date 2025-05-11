@@ -318,7 +318,7 @@ i18n.use(initReactI18next).init({
           title_1: "Отзывы",
           title_2: "наших клиентов",
         },
-        narxi: "Цена",
+        narxi: "Цена от",
         summ2: "сум/м²",
       },
     },
