@@ -13,8 +13,14 @@ const AboutMain = () => {
       <p className="text-sm md:text-base text-gray-700 mb-6">
         {t("about.paragraph_1")}
       </p>
-      <p className="text-sm md:text-base text-gray-700">
+      <p className="text-sm md:text-base text-gray-700 mb-6">
         {t("about.paragraph_2")}
+      </p>
+      <p className="text-sm md:text-base text-gray-700 mb-6">
+        {t("about.paragraph_3")}
+      </p>
+      <p className="text-sm md:text-base text-gray-700">
+        {t("about.paragraph_4")}
       </p>
     </div>
   );

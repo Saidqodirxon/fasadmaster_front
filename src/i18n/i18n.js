@@ -28,9 +28,10 @@ i18n.use(initReactI18next).init({
           title_1: "БИЗНИНГ",
           title_2: "АФЗАЛЛИКЛАРИМИЗ",
           guarantee: {
-            title: "Расмий кафолат — 10 йил",
-            description:
-              "Биз ишимиз сифтига ишонамиз, шунинг учун 10 йиллик расмий кафолат берамиз.",
+            title:
+              "Мўҳр қўйилган шартнома асосида ишлаймиз ва 10 йиллик кафолат берамиз",
+            description: `Ҳар бир лойиҳа аниқ муддатлар ва мажбуриятлар кўрсатилган расмий шартнома билан таъминланади.
+          Биз ўз ишларимизнинг сифатига ишонамиз ва 10 йиллик кафолат берамиз — бу ишончли материаллар ва синовдан ўтган технологиялар асосида мумкин.`,
           },
           materials: {
             title: "Премиум материаллар",
@@ -67,11 +68,15 @@ i18n.use(initReactI18next).init({
         },
         about: {
           title_1: "КОМПАНИЯ ҲАҚИДА",
-          title_2: "FASAD MASTER",
+          title_2: "ФАСАД МАСТЕР",
           paragraph_1:
-            "ООО ФАСАД МАСТЕР 10 йилдан ортиқ вақтдан бери қурилиш хизматлари бозорида фаолият юритиб келмоқда. Компания Тошкент шаҳрида жойлашган бўлиб, 90 нафардан ортиқ мутахассисларга эга ва ўзининг кенг моддий-техника базасига эга. Бизнинг асосий ихтисослашувимиз — ҳар қандай мураккабликдаги фасад ишларидир. Компания 400 дан ортиқ объектни амалга оширган ҳамда фасадларни суюқ травертин, қумтош, ғишт, табиий тош, турли хил сувақлар ва бошқа материаллар билан безаш тажрибасига эга. Фасадни безаш бир вақтнинг ўзида икки вазифани ҳал қилади: бинонинг эстетик кўринишини таъминлаш ва сиртни ташқи омиллар таъсиридан ҳимоя қилиш.",
+            "«Фасад Мастер» МЧЖ 10 йилдан ортиқ вақтдан бери қурилиш хизматлари бозорида фаолият юритиб келмоқда. Компания ҳудудий жиҳатдан Тошкент шаҳрида жойлашган бўлиб, 90 нафардан ортиқ мутахассисларга эга ва ўзининг кенг моддий-техник ресурс базасига эга.",
           paragraph_2:
-            "Репутация — бизнинг асосий қадриятимиз. Тошкентда фасад ишларини бажаришда биз юқори сифат стандартларига риоя қиламиз ва буюртмачиларнинг энг юқори талабларига жавоб беришга ҳаракат қиламиз. Биз фақат сертификатланган материаллардан фойдаланамиз, шартномаларни мукаммал бажарамиз, оқилона нарх сиёсатини олиб борамиз ва тўлиқ ўз-ўзини таъминлашни таъминлаймиз.",
+            "Асосий ихтисослашувимиз — ҳар қандай мураккабликдаги фасад ишларидир. Компания ҳисобида 400 дан ортиқ объектлар ва суюқ травертин, қумтош, ғишт, табиий тош, турли хил шпатлевкалар ва бошқа материаллар билан фасадни безаш бўйича бой тажриба мавжуд. Фасадни безатиш бинога эстетик кўриниш берибгина қолмай, уни ташқи омиллардан ҳимоя қилади.",
+          paragraph_3:
+            "Бизнинг ишларимиз расмий шартнома ва муҳр асосида амалга оширилади. Барча мажбуриятлар ҳужжат орқали тасдиқланади ва бу ҳамкорликнинг очиқлиги ҳамда ишончлилигини кафолатлайди.",
+          paragraph_4:
+            "Репутация — бизнинг асосий қадриятимиз. Биз Тошкентда фасад ишларини олиб борганимизда, юқори сифат стандартларига амал қиламиз ва буюртмачиларнинг энг юқори талабларига жавоб беришга ҳаракат қиламиз. Бизнинг принципларимиз: сертификатланган материаллардан фойдаланиш, шартномаларга сўзсиз риоя этиш, адолатли нарх сиёсати ва тўлиқ ўзини таъминлаш.",
         },
         contacts: {
           title: "Объектга прораб чақириб, маслаҳат олинг",
@@ -140,8 +145,9 @@ i18n.use(initReactI18next).init({
         contact_form: {
           heading: "Биз билан боғланинг",
           short_about: "Қисқача биз ҳақимизда",
-          company_description:
-            "ООО FASAD MASTER қурилиш хизматлари бозорида 10 йилдан ортиқ вақтдан бери ишлайди. Компания Тошкент шаҳрида жойлашган бўлиб, 90 дан ортиқ мутахассисларга эга ва ўзининг катта моддий-техник ресурслар базасига эга. Бизнинг асосий ихтисослигимиз — ҳар қандай мураккабликдаги фасад ишлари. Компания 400 дан ортиқ лойиҳаларни амалга оширган ва фасадларни суюқ травертин, қумтош, ғишт, табиий тош, ҳар хил турдаги гипс ва бошқа материаллар билан безаш тажрибасига эга. Фасадларни тугатиш бир вақтнинг ўзида икки хил муаммони ҳал қилади: бинога эстетик кўриниш бериш ва сиртларни ташқи омиллар таъсиридан ҳимоя қилиш.",
+          company_description: `«Фасад Мастер» МЧЖ — фасад ишларида 10 йилдан ортиқ тажриба. Штатда — 90 нафардан ортиқ мутахассис, Ўзбекистон бўйлаб 400 дан ортиқ объект.
+          Расмий муҳрли шартнома асосида ишлаймиз.
+          Ихтисослашув: суюқ травертин, қумтош, ғишт, тош, шпатлевка ва бошқа фасад материаллари.`,
           form_heading: "Контактларингизни қолдиринг",
           thanks: "Рахмат! Тез орада сиз билан боғланамиз.",
           name: "Исм",
@@ -181,9 +187,9 @@ i18n.use(initReactI18next).init({
           title_1: "НАШИ",
           title_2: "ПРЕИМУЩЕСТВА",
           guarantee: {
-            title: "Официальная гарантия — 10 лет",
-            description:
-              "Мы уверены в качестве своей работы, поэтому предоставляем официальную гарантию от компании Fasad Master сроком на 10 лет. Это возможно благодаря использованию проверенных технологий и надёжных материалов.",
+            title: "Работаем по договору с печатью и даём 10 лет гарантии",
+            description: `Каждый проект сопровождается официальным договором с чёткими сроками и обязательствами.
+Мы уверены в качестве своей работы и предоставляем гарантию 10 лет — благодаря надёжным материалам и проверенным технологиям.`,
           },
           materials: {
             title: "Премиальные материалы",
@@ -223,9 +229,13 @@ i18n.use(initReactI18next).init({
           title_1: "О КОМПАНИИ",
           title_2: "ФАСАД МАСТЕР",
           paragraph_1:
-            "ООО ФАСАД МАСТЕР более 10 лет работает на рынке строительных услуг. Территориально компания находится в Ташкенте, имеет в штате более 90+ специалистов и располагает обширной базой собственных материально-технических ресурсов. Наша основная специализация — фасадные работы любой сложности. На счету компании более 400 объектов и опыт отделки фасадов жидким травертином, песчаником, кирпичом, натуральным камнем, различными видами штукатурки и другими материалами. Отделка фасадов решает сразу две задачи: придание зданию эстетического вида и защита поверхности от воздействия внешних факторов.",
+            "ООО «Фасад Мастер» более 10 лет работает на рынке строительных услуг. Территориально компания находится в Ташкенте, имеет в штате более 90 специалистов и располагает обширной базой собственных материально-технических ресурсов.",
           paragraph_2:
-            "Репутация — наша ключевая ценность. Выполняя отделочные работы в Ташкенте, мы придерживаемся высоких стандартов качества и стараемся отвечать самым высоким требованиям заказчиков. В наших правилах использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
+            "Наша основная специализация — фасадные работы любой сложности. На счету компании более 400 объектов и богатый опыт отделки фасадов жидким травертином, песчаником, кирпичом, натуральным камнем, различными видами штукатурки и другими материалами. Отделка фасадов решает сразу две задачи: придание зданию эстетического вида и защита поверхности от воздействия внешних факторов.",
+          paragraph_3:
+            "Работаем по официальному договору с печатью. Все обязательства фиксируются документально, что гарантирует прозрачность и надёжность сотрудничества.",
+          paragraph_4:
+            "Репутация — наша ключевая ценность. Выполняя отделочные работы в Ташкенте, мы придерживаемся высоких стандартов качества и стараемся соответствовать самым высоким требованиям заказчиков. В наших принципах — использование сертифицированных материалов, безукоризненное соблюдение договоров, разумная ценовая политика и полное самообеспечение.",
         },
         contacts: {
           title:
@@ -293,8 +303,9 @@ i18n.use(initReactI18next).init({
         contact_form: {
           heading: "Наши контакты",
           short_about: "Коротко о нас",
-          company_description:
-            "ООО ФАСАД МАСТЕР более 10 лет работает на рынке строительных услуг. Территориально компания находится в Ташкенте, имеет в штате более 90+ специалистов и располагает обширной базой собственных материально-технических ресурсов. Наша основная специализация – фасадные работы любой сложности. На счету компании более 400 объектов и опыт отделки фасадов жидким травертином, песчаником, кирпичом, натуральным камнем, различными видами штукатурки и другими материалами. Отделка фасадов решает сразу две задачи: придание зданию эстетического вида и защита поверхностей от воздействия внешних факторов.",
+          company_description: `ООО «Фасад Мастер» — более 10 лет опыта в фасадных работах. В штате — свыше 90 специалистов, более 400 объектов по Узбекистану.
+Работаем по официальному договору с печатью.
+Специализация: жидкий травертин, песчаник, кирпич, камень, штукатурка и другие фасадные материалы.`,
           form_heading: "Оставьте Ваши контакты",
           thanks: "Спасибо! Мы скоро с вами свяжемся.",
           name: "Имя",
@@ -335,9 +346,10 @@ i18n.use(initReactI18next).init({
           title_1: "OUR",
           title_2: "ADVANTAGES",
           guarantee: {
-            title: "Official warranty — 10 years",
-            description:
-              "We are confident in our quality, so we offer an official 10-year warranty from Fasad Master. This is possible thanks to reliable technology and materials.",
+            title:
+              "We work under a sealed contract and provide a 10-year guarantee",
+            description: `Each project is supported by an official contract with clear deadlines and obligations.
+          We are confident in the quality of our work and offer a 10-year guarantee — thanks to reliable materials and proven technologies.`,
           },
           materials: {
             title: "Premium materials",
@@ -374,12 +386,16 @@ i18n.use(initReactI18next).init({
           imageAlt: "Why choose",
         },
         about: {
-          title_1: "ABOUT",
+          title_1: "ABOUT THE COMPANY",
           title_2: "FASAD MASTER",
           paragraph_1:
-            "FASAD MASTER LLC has been operating in the construction services market for over 10 years. The company is located in Tashkent, employs more than 90 specialists, and has an extensive base of its own material and technical resources. Our main specialization is facade work of any complexity. The company has completed over 400 projects and has experience in finishing facades with liquid travertine, sandstone, brick, natural stone, various types of plaster, and other materials. Facade finishing solves two tasks at once: giving the building an aesthetic appearance and protecting the surface from external factors.",
+            "LLC 'Fasad Master' has been operating in the construction services market for over 10 years. The company is based in Tashkent, employs more than 90 specialists, and has an extensive base of its own material and technical resources.",
           paragraph_2:
-            "Reputation is our core value. While carrying out finishing works in Tashkent, we adhere to high-quality standards and strive to meet the highest expectations of our clients. We use certified materials, strictly follow contracts, maintain a fair pricing policy, and ensure full self-sufficiency.",
+            "Our main specialization is façade work of any complexity. The company has completed over 400 projects and has extensive experience in finishing façades with liquid travertine, sandstone, brick, natural stone, various types of plaster, and other materials. Façade finishing serves two purposes: enhancing the building’s appearance and protecting it from external influences.",
+          paragraph_3:
+            "We work under an official contract with a company seal. All obligations are documented, ensuring transparency and reliability in cooperation.",
+          paragraph_4:
+            "Reputation is our key value. While carrying out finishing work in Tashkent, we adhere to high quality standards and strive to meet the most demanding customer expectations. Our principles include the use of certified materials, flawless contract compliance, fair pricing, and full self-sufficiency.",
         },
         contacts: {
           title:
@@ -447,8 +463,9 @@ i18n.use(initReactI18next).init({
         contact_form: {
           heading: "Our Contacts",
           short_about: "About Us",
-          company_description:
-            "FASAD MASTER LLC has been working in the construction services market for over 10 years. The company is located in Tashkent, has over 90+ specialists on staff and has an extensive base of its own material and technical resources. Our main specialization is facade works of any complexity. The company has over 400 objects and experience in finishing facades with liquid travertine, sandstone, brick, natural stone, various types of plaster and other materials. Finishing facades solves two problems at once: giving the building an aesthetic appearance and protecting surfaces from external factors.",
+          company_description: `LLC "Fasad Master" — over 10 years of experience in façade work. The team includes more than 90 specialists, with over 400 completed projects across Uzbekistan.
+          We operate under an official contract with a company seal.
+          Specialization: liquid travertine, sandstone, brick, stone, plaster, and other façade materials.`,
           form_heading: "Leave your contact info",
           thanks: "Thank you! We'll contact you soon.",
           name: "Name",
