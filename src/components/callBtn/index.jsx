@@ -1,14 +1,18 @@
 import { FaPhone } from "react-icons/fa";
+import "./style.scss";
 
 function CallButton() {
   return (
-    <a
-      href="tel:+998901234567" // o'zingizning raqamingizni yozing
-      className="fixed bottom-20 right-6 bg-[#71914B] hover:bg-[#72914bb0] text-white p-3 rounded-full shadow-lg z-50 transition-colors animate-ping-slow"
-      aria-label="Call phone number"
-    >
-      <FaPhone className="text-xl" />
-    </a>
+    <div className="call-button-wrapper">
+      <div className="call-pulse"></div>
+      <a
+        href="tel:+998901234567"
+        className="call-btn"
+        aria-label="Call phone number"
+      >
+        <FaPhone className="call-icon" />
+      </a>
+    </div>
   );
 }
 
