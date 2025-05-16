@@ -10,7 +10,9 @@ const ServicesMain = () => {
 
   useEffect(() => {
     axios
-      .get("https://back.fasadmaster.uz/services?is_visible=true&page[limit]=3")
+      .get(
+        "https://back.fasadmaster.uz/services?is_visible=true&page[limit]=10000000000"
+      )
       .then((response) => {
         setServices(response.data.data);
       })
