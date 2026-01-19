@@ -50,8 +50,8 @@ function Hero() {
                   {i18n.language === "ru"
                     ? banner.name_ru
                     : i18n.language === "en"
-                    ? banner.name_en
-                    : banner.name_uz}
+                      ? banner.name_en
+                      : banner.name_uz}
                 </h2>
                 <a
                   href="contacts"
