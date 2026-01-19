@@ -11,9 +11,8 @@ import "./hero.scss";
 import { Link } from "react-router-dom";
 
 function Hero() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [banners, setBanners] = useState([]);
-  const currentLang = localStorage.getItem("i18nextLng") || "uz";
 
   useEffect(() => {
     axios
@@ -48,7 +47,11 @@ function Hero() {
               {/* Kontent */}
               <div className="relative z-10 md:text-start text-center text-white max-w-xl md:mx-[8vw] mx-[1vw]">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                  {currentLang === "ru" ? banner.name_ru : banner.name_uz}  
+                  {i18n.language === "ru"
+                    ? banner.name_ru
+                    : i18n.language === "en"
+                    ? banner.name_en
+                    : banner.name_uz}
                 </h2>
                 <a
                   href="contacts"
